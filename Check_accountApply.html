@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html><head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <style type="text/css">
+        body {
+            font-family: '微软雅黑', sans-serif;
+            font-size: 13px;
+            padding-bottom: 40px;
+            background-color: #e9e7ef;
+        }
+
+        .sidebar-nav {
+            padding: 9px 0;
+        }
+
+        @media ( max-width : 980px) {
+            /* Enable use of floated navbar text */
+            .navbar-text.pull-right {
+                float: none;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+        }
+        button[collegeId]{
+            font-family: '微软雅黑', sans-serif;
+            background-color: #93C6EA;
+            border: none;
+            margin: 0 2px;
+            line-height: 30px;
+        }
+        button[collegeId]:hover{
+            background-color: #3B97D8;
+            border: none;
+            margin: 0 2px;
+            line-height: 30px;
+        }
+        .nav {
+            margin:20px;
+            font-size: 18px;
+        }
+        .content {
+            margin:50px;
+            font-size:16px;
+        }
+        .content table tr th{
+            width:15px;
+        }
+        .nav button{
+            margin:0px 20px;
+        }
+        .btn a {
+            text-decoration:none;
+            color:#fff;
+        }
+        .score {
+            margin-left:60px;
+        }
+        .table td {
+            text-align: center;
+            height:38px;
+            line-height: 38px;
+        }
+        .btn {
+            margin-left:20px;
+        }
+    </style>
+</head>
+<body marginwidth="0" marginheight="0">
+<div class="nav">
+    <span>审核管理</span>&gt;<span>帐号申请</span><br><br>
+    共0个邀请，已处理0个<br><br>
+    <button class="btn btn-primary btn-apply">未处理</button>
+    <button class="btn btn-applied">已处理</button>
+</div><hr>
+<div class="apply">
+    <table class="table table-hover table-bordered">
+        <thead>
+        <tr>
+            <th>申请单位</th>
+            <th>联系人</th>
+            <th>申请账户</th>
+            <th>联系电话</th>
+            <th colspan="2">操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+
+<div class="applied hidden">
+    <table class="table table-hover table-bordered">
+        <thead>
+        <tr>
+            <th>申请单位</th>
+            <th>联系人</th>
+            <th>申请账户</th>
+            <th>联系电话</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+
+<script>
+    $(function(){
+        $(".btn-apply").click(function(){
+            $(this).addClass("btn-primary").siblings().removeClass("btn-primary"); //切换选中的按钮高亮状态
+            $(".apply").show();
+            $(".applied").addClass("hidden");
+        });
+        $(".btn-applied").click(function(){
+            $(this).addClass("btn-primary").siblings().removeClass("btn-primary"); //切换选中的按钮高亮状态
+            $(".applied").removeClass("hidden");
+            $(".apply").hide();
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    function disp_confirm(id){
+        var r=confirm("确定要删除吗？")
+        if(r==true){
+            location.href="http://app.hopefound.cn:8080/Admin/Check/delete?id="+id;
+        }
+    }
+</script>
+</body></html>

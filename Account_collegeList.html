@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html><head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <style type="text/css">
+        body {
+            font-family: '微软雅黑', sans-serif;
+            font-size: 13px;
+            padding-bottom: 40px;
+            background-color: #e9e7ef;
+        }
+
+        .sidebar-nav {
+            padding: 9px 0;
+        }
+
+        @media ( max-width : 980px) {
+            /* Enable use of floated navbar text */
+            .navbar-text.pull-right {
+                float: none;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+        }
+        button[collegeId]{
+            font-family: '微软雅黑', sans-serif;
+            background-color: #93C6EA;
+            border: none;
+            margin: 0 2px;
+            line-height: 30px;
+        }
+        button[collegeId]:hover{
+            background-color: #3B97D8;
+            border: none;
+            margin: 0 2px;
+            line-height: 30px;
+        }
+        div.nav {
+            padding:20px;
+            font-size: 18px;
+        }
+        .nav button{
+            margin:0px 20px;
+        }
+        .btn a {
+            text-decoration:none;
+            color:#fff;
+        }
+        tr th{
+            width:18%;
+        }
+        #operate {
+            width:28%;
+        }
+        td a{
+            padding:10px;
+        }
+        .pull-right{
+            margin-left:50px;
+        }
+    </style>
+</head>
+<body marginwidth="0" marginheight="0">
+<div class="nav">
+    <span>账户管理</span> &gt; <span>创业大学</span>
+    <a class="btn btn-primary pull-right" href="javascript:;">导出</a>
+    <a class="btn btn-primary pull-right" href="Account_addCollege.html">新增</a>
+</div><hr>
+<form class="form-inline definewidth m20" action="Account_collegeList.html" method="get">
+    <input type="text" name="collegeName" id="menuname" class="abc input-default" placeholder="创大名称" value="">&nbsp;&nbsp;
+    <button type="submit" class="btn btn-primary">搜索</button>
+</form>
+<table class="table table-bordered table-hover definewidth m10">
+    <thead>
+    <tr>
+        <th>创大名称</th>
+        <th>创大帐号</th>
+        <th>联系方式</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody><tr>
+        <td>测试大学</td>
+        <td>testuser</td>
+        <td>15515263256</td>
+        <td id="operate">
+            <a href="Account_collegeView.html?id=221&amp;collegeName=&amp;p=">查看</a>
+            <a href="javascript:;" onclick="disp_confirm(221)">删除</a>
+            <!--<a href="/index.php/Admin/Account/disableCollege.html?id=221">封号/解封</a>-->
+            <a id="disable-account" href="javascript:;" data-toggle="modal" data-target="#disableModal" onclick="changeId(221)">
+                封号
+            </a>
+
+            <a href="javascript:;" onclick="repass(221)">重置密码</a>
+            <a href="javascript:;" data-toggle="modal" data-target="#addAccountModal" onclick="addAccount(221)">添加帐号</a>
+        </td>
+    </tr><tr>
+        <td>福州华普亿方创业大学</td>
+        <td></td>
+        <td>0</td>
+        <td id="operate">
+            <a href="Account_collegeView.html?id=219&amp;collegeName=&amp;p=">查看</a>
+            <a href="javascript:;" onclick="disp_confirm(219)">删除</a>
+            <!--<a href="/index.php/Admin/Account/disableCollege.html?id=219">封号/解封</a>-->
+            <a id="disable-account" href="javascript:;" data-toggle="modal" data-target="#disableModal" onclick="changeId(219)">
+                封号
+            </a>
+
+            <a href="javascript:;" onclick="repass(219)">重置密码</a>
+            <a href="javascript:;" data-toggle="modal" data-target="#addAccountModal" onclick="addAccount(219)">添加帐号</a>
+        </td>
+    </tr><tr>
+        <td>华普创业大学</td>
+        <td>hpcydx</td>
+        <td>15805061236</td>
+        <td id="operate">
+            <a href="Account_collegeView.html?id=218&amp;collegeName=&amp;p=">查看</a>
+            <a href="javascript:;" onclick="disp_confirm(218)">删除</a>
+            <!--<a href="/index.php/Admin/Account/disableCollege.html?id=218">封号/解封</a>-->
+            <a id="disable-account" href="javascript:;" data-toggle="modal" data-target="#disableModal" onclick="changeId(218)">
+                封号
+            </a>
+
+            <a href="javascript:;" onclick="repass(218)">重置密码</a>
+            <a href="javascript:;" data-toggle="modal" data-target="#addAccountModal" onclick="addAccount(218)">添加帐号</a>
+        </td>
+    </tr><tr>
+        <td>威海创业大学</td>
+        <td>18663198379</td>
+        <td>18663198379</td>
+        <td id="operate">
+            <a href="/index.php/Admin/Account/collegeView.html?id=141&amp;collegeName=&amp;p=">查看</a>
+            <a href="javascript:;" onclick="disp_confirm(141)">删除</a>
+            <!--<a href="/index.php/Admin/Account/disableCollege.html?id=141">封号/解封</a>-->
+            <a id="disable-account" href="javascript:;" data-toggle="modal" data-target="#disableModal" onclick="changeId(141)">
+                封号
+            </a>
+
+            <a href="javascript:;" onclick="repass(141)">重置密码</a>
+            <a href="javascript:;" data-toggle="modal" data-target="#addAccountModal" onclick="addAccount(141)">添加帐号</a>
+        </td>
+    </tr>
+
+    <tr><td style="font-size: 15px" colspan="9"><div>共1页     </div></td></tr>
+
+    </tbody></table>
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="disableModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    ×
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    封号确认
+                </h4>
+            </div>
+            <form id="input-form" action="/index.php/Admin/Account/disableCollege.html" method="post">
+                <input id="college-id" type="hidden" name="id" value="">
+                <div class="modal-body">
+                    请选择封号时长
+                    <select id="forbidden" name="forbidden">
+                        <option value="259200">3天</option>
+                        <option value="604800">7天</option>
+                        <option value="2592000">30天</option>
+                        <option value="15552000">180天</option>
+                        <option value="31536000">365天</option>
+                        <option value="315360000">永久</option>
+                    </select>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消
+                    </button>
+                    <button type="submit" id="submit" class="btn btn-primary">确认</button>
+                </div>
+            </form>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="addAccountModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    ×
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    添加帐号
+                </h4>
+            </div>
+            <form id="add-account" action="/index.php/Admin/Account/addCollegeAccount.html" method="post">
+                <input type="hidden" name="accountId" id="account-id">
+                <div class="modal-body">
+                    <input type="text" name="account" placeholder="请输入6-16位数字字母组合">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消
+                    </button>
+                    <button type="submit" id="submit" class="btn btn-primary">确认</button>
+                </div>
+            </form>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+
+<script type="text/javascript">
+    function disp_confirm(id){
+        var r=confirm("确定要删除吗？")
+        if(r==true){
+            location.href="http://app.hopefound.cn:8080/Admin/Account/deleteCollege?id="+id;
+        }
+    }
+    function repass(id){
+        var r=confirm("确定要重置密码吗？")
+        if(r==true){
+            location.href="http://app.hopefound.cn:8080/Admin/Account/resetPassCollege?id="+id;
+        }
+    }
+    function addAccount(accountId){
+        $("#account-id").val(accountId);
+    }
+</script>
+<script type="text/javascript">
+    function changeId(id){
+        $("#college-id").val(id);
+    }
+    $(document).ready(function(){
+        $("#submit").click(function(){
+            var collegeId = $("#college-id").val();
+            forbidden = $("#forbidden").val();
+            url = $("#input-form").attr('action');
+            data = {};
+            data['collegeId'] = collegeId;
+            data['forbidden'] = forbidden;
+            $.post(url, data, function(e) {
+                if(e.status==0){
+                    window.location.reload();//刷新当前页面
+                }else{
+                    alert('操作失败');
+                }
+            },'json');
+            return false;
+        });
+    });
+</script>
+</body></html>

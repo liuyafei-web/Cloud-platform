@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html><head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <style type="text/css">
+        body {
+            font-family: '微软雅黑', sans-serif;
+            font-size: 13px;
+            padding-bottom: 40px;
+            background-color: #e9e7ef;
+        }
+
+        .sidebar-nav {
+            padding: 9px 0;
+        }
+
+        @media ( max-width : 980px) {
+            /* Enable use of floated navbar text */
+            .navbar-text.pull-right {
+                float: none;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+        }
+        button[collegeId]{
+            font-family: '微软雅黑', sans-serif;
+            background-color: #93C6EA;
+            border: none;
+            margin: 0 2px;
+            line-height: 30px;
+        }
+        button[collegeId]:hover{
+            background-color: #3B97D8;
+            border: none;
+            margin: 0 2px;
+            line-height: 30px;
+        }
+        .nav {
+            margin:20px;
+            font-size: 18px;
+        }
+        .content {
+            margin:50px;
+            font-size:16px;
+        }
+        .content table tr th{
+            width:15px;
+        }
+        .nav button{
+            margin:0px 20px;
+        }
+        .btn a {
+            text-decoration:none;
+            color:#fff;
+        }
+        .score {
+            margin-left:60px;
+        }
+        .table td {
+            text-align: center;
+            height:38px;
+            line-height: 38px;
+        }
+        .btn {
+            margin-left:20px;
+        }
+        form {
+            margin-left:50px;
+        }
+    </style>
+</head>
+<body marginwidth="0" marginheight="0">
+<div class="nav">
+    <span>排行管理</span> &gt; <span>创业英雄排行榜</span><br><br>
+    <button class="btn btn-primary btn-all">全国榜</button>
+    <button class="btn btn-college">大学榜</button>
+</div><hr>
+<div class="all">
+    <table class="table table-hover table-bordered">
+        <thead>
+        <tr>
+            <th>名次</th>
+            <th>姓名</th>
+            <th>项目名称</th>
+            <th>所属创大</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td>王鑫亮</td>
+            <td>来可发投资服务</td>
+            <td>华普亿方创业大学</td>
+        </tr><tr>
+            <td>1</td>
+            <td>杰克</td>
+            <td>俄语大赛</td>
+            <td>华普亿方创业大学</td>
+        </tr><tr>
+            <td>2</td>
+            <td>华普一</td>
+            <td>相阿QLOL默默提吐了</td>
+            <td>华普创业大学</td>
+        </tr><tr>
+            <td>2</td>
+            <td>威海01</td>
+            <td>抽空哭了</td>
+            <td>威海创业大学</td>
+        </tr><tr>
+            <td>2</td>
+            <td>派克</td>
+            <td>库拉索</td>
+            <td>华普亿方创业大学</td>
+        </tr><tr>
+            <td>3</td>
+            <td>Fhhh</td>
+            <td>Ghhh</td>
+            <td>青岛创业大学</td>
+        </tr><tr>
+            <td>5</td>
+            <td>3哦考虑考虑考</td>
+            <td>玻璃龙膜</td>
+            <td>华普创业大学</td>
+        </tr>            </tbody>
+        <tbody><tr><td style="font-size: 15px" colspan="9"><div>共1页     </div></td></tr>
+        </tbody></table>
+</div>
+
+<div class="college hidden">
+    <form action="Rank_heroRank.html" method="get">
+        <input type="text" name="collegeName" placeholder="请输入创业大学名" value="">
+        <button type="submit" class="btn btn-primary submit">搜索</button>
+    </form>
+    <table class="table table-hover table-bordered">
+        <thead>
+        <tr>
+            <th>名次</th>
+            <th>姓名</th>
+            <th>年份</th>
+            <th>所属创大</th>
+        </tr>
+        </thead>
+        <tbody id="college-td">
+        <tr>
+            <td>1</td>
+            <td>王鑫亮</td>
+            <td>2016</td>
+            <td>华普亿方创业大学</td>
+        </tr><tr>
+            <td>1</td>
+            <td>杰克</td>
+            <td>2017</td>
+            <td>华普亿方创业大学</td>
+        </tr><tr>
+            <td>2</td>
+            <td>华普一</td>
+            <td>2016</td>
+            <td>华普创业大学</td>
+        </tr><tr>
+            <td>2</td>
+            <td>威海01</td>
+            <td>2016</td>
+            <td>威海创业大学</td>
+        </tr><tr>
+            <td>2</td>
+            <td>派克</td>
+            <td>2017</td>
+            <td>华普亿方创业大学</td>
+        </tr><tr>
+            <td>3</td>
+            <td>Fhhh</td>
+            <td>2017</td>
+            <td>青岛创业大学</td>
+        </tr><tr>
+            <td>5</td>
+            <td>3哦考虑考虑考</td>
+            <td>2017</td>
+            <td>华普创业大学</td>
+        </tr>            </tbody>
+    </table>
+</div>
+
+<script>
+    $(function(){
+        $(".btn-all").click(function(){
+            $(this).addClass("btn-primary").siblings().removeClass("btn-primary"); //切换选中的按钮高亮状态
+            $(".all").show();
+            $(".college").addClass("hidden");
+        });
+        $(".btn-college").click(function(){
+            $(this).addClass("btn-primary").siblings().removeClass("btn-primary"); //切换选中的按钮高亮状态
+            $(".college").removeClass("hidden");
+            $(".all").hide();
+        });
+    });
+
+    $(document).ready(function(){
+        $(".submit").click(function(){
+            var url = $("form").attr('action');
+            data = {};
+            data['collegeName'] = $("input").val();
+            $.post(url,data,function(e){
+                $("#college-td").html("");
+                for(var i=0;i<e.length;i++){
+
+                    $("#college-td").append(
+                            "<tr><td>"+e[i]['rank']+"</td><td>"+e[i]['name']+"</td><td>"+e[i]['year']+"</td><td>"+e[i]['college_name']+"</td></tr>");
+                }
+
+            },'json');
+            return false;
+        });
+    });
+</script>
+
+</body></html>

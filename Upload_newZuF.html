@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html><head>
+    <meta http-equiv="Content-Type" charset="UTF-8">
+    <title>总分制</title>
+    <link href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/ZF.css">
+</head>
+
+<body marginwidth="0" marginheight="0">
+<div class="row">
+    <div class="col-sm-12">
+        <h1 class="page-header">上传题目</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">表单</div>
+            <div id="getHtml" class="panel-body">
+                <form class="form-horizontal" role="form">
+                    <input type="hidden" id="token" value="M9oPO_UEiqKhW425w70ZzEtKNMTC8V_vMUxhyE4s:GbDaiK6_JMIiFeiFLZ9BlL6nZnY=:eyJzY29wZSI6Inlpbmd6aGlkYW8iLCJkZWFkbGluZSI6MTUxMDcxMzc4MH0=">
+                    <div class="form-group">
+                        <label class="col-sm-1 control-label">题目名称</label>
+                        <div class="col-sm-11">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-1 control-label">测评说明</label>
+                        <div class="col-sm-11">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-1 control-label">题目</label>
+                        <div class="col-sm-11">
+                            <div class="example">
+                                <div class="panel">
+                                    <div class="panel-heading jkc-header">
+                                        <span class="jkc-bh">1、</span>
+                                        <div class="jkc-position">
+                                            <div class="jkc-title" contenteditable="true" data-status="0">点击编辑题目</div>
+                                            <div class="survey-hid edit-img" id="container" contenteditable="false">
+                                                <ul>
+                                                    <li class="upload-element-img upload-form">
+                                                        <input type="file" class="upload-img fileActive" id="pickfiles" style="display: none; position: relative; z-index: 1;">
+                                                        <input type="button" class="upload-img upload">
+                                                        <div class="visibility-btn" title="图片"></div>
+                                                    </li>
+                                                </ul>
+                                                <div id="html5_1buulfgot8elr0s1gh6geq1pcp3_container" class="moxie-shim moxie-shim-html5" style="position: absolute; top: 0px; left: 0px; width: 0px; height: 0px; overflow: hidden; z-index: 0;"><input id="html5_1buulfgot8elr0s1gh6geq1pcp3" type="file" style="font-size: 999px; opacity: 0; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;" multiple="" accept=""></div></div>
+                                        </div>
+
+                                    </div>
+                                    <div class="panel-body jkc-body">
+                                        <ul class="jkc-add-option">
+                                            <li>
+                                                <span class="jkc-option">A.</span>
+                                                <div class="jkc-position">
+                                                    <div class="jkc-content" contenteditable="true" data-status="0">点击编辑选项"A"</div>
+                                                    <div class="survey-hid edit-img" contenteditable="false">
+                                                        <ul>
+                                                            <li class="upload-element-img upload-form">
+                                                                <input type="button" class="upload-img upload">
+                                                                <div class="visibility-btn" title="图片"></div>
+                                                            </li>
+                                                            <li class="handle-element handle-child-element" title="设置正确答案" style="display: none;"></li>
+                                                            <li class="handle-element remove-child-element jkc-remove-circle" title="删除" style="display: list-item;"></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <span class="jkc-option" style="margin-left: 15px;">分数</span>
+                                                <div class="jkc-position" style="margin-left: 2px;">
+                                                    <div class="jkc-minContent" contenteditable="true"></div>
+                                                </div>
+                                                <div class="jkc-position" style="margin-left: 15px;vertical-align: middle;"> <input type="checkbox" class="jkc-checkbox"> </div> <span class="jkc-option" style="margin-left: 5px;">设置正确答案</span>
+                                            </li>
+                                            <li>
+                                                <span class="jkc-option">B.</span>
+                                                <div class="jkc-position">
+                                                    <div class="jkc-content" contenteditable="true" data-status="0">点击编辑选项"B"</div>
+                                                    <div class="survey-hid edit-img" contenteditable="false">
+                                                        <ul>
+                                                            <li class="upload-element-img upload-form">
+                                                                <input type="button" class="upload-img upload">
+                                                                <div class="visibility-btn" title="图片"></div>
+                                                            </li>
+                                                            <li class="handle-element handle-child-element" title="设置正确答案" style="display: none;"></li>
+                                                            <li class="handle-element remove-child-element jkc-remove-circle" title="删除" style="display: list-item;"></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <span class="jkc-option" style="margin-left: 15px;">分数</span>
+                                                <div class="jkc-position" style="margin-left: 2px;">
+                                                    <div class="jkc-minContent" contenteditable="true"></div>
+                                                </div>
+                                                <div class="jkc-position" style="margin-left: 15px;vertical-align: middle;">
+                                                    <input type="checkbox" class="jkc-checkbox">
+                                                </div>
+                                                <span class="jkc-option" style="margin-left: 5px;">设置正确答案</span>
+                                            </li>
+                                            <li>
+                                                <span class="jkc-option">C.</span>
+                                                <div class="jkc-position">
+                                                    <div class="jkc-content" contenteditable="true" data-status="0">点击编辑选项"C"</div>
+                                                    <div class="survey-hid edit-img" contenteditable="false">
+                                                        <ul>
+                                                            <li class="upload-element-img upload-form">
+                                                                <input type="button" class="upload-img upload">
+                                                                <div class="visibility-btn" title="图片"></div>
+                                                            </li>
+                                                            <li class="handle-element handle-child-element" title="设置正确答案" style="display: none;"></li>
+                                                            <li class="handle-element remove-child-element jkc-remove-circle" title="删除" style="display: list-item;"></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <span class="jkc-option" style="margin-left: 15px;">分数</span>
+                                                <div class="jkc-position" style="margin-left: 2px;">
+                                                    <div class="jkc-minContent" contenteditable="true"></div>
+                                                </div>
+                                                <div class="jkc-position" style="margin-left: 15px;vertical-align: middle;">
+                                                    <input type="checkbox" class="jkc-checkbox">
+                                                </div>
+                                                <span class="jkc-option" style="margin-left: 5px;">设置正确答案</span>
+                                            </li>
+                                            <li>
+                                                <span class="jkc-option">D.</span>
+                                                <div class="jkc-position">
+                                                    <div class="jkc-content" contenteditable="true" data-status="0">点击编辑选项"D"</div>
+                                                    <div class="survey-hid edit-img" contenteditable="false">
+                                                        <ul>
+                                                            <li class="upload-element-img upload-form">
+                                                                <input type="button" class="upload-img upload">
+                                                                <div class="visibility-btn" title="图片"></div>
+                                                            </li>
+                                                            <li class="handle-element handle-child-element" title="设置正确答案" style="display: none;"></li>
+                                                            <li class="handle-element remove-child-element jkc-remove-circle" title="删除" style="display: list-item;"></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <span class="jkc-option" style="margin-left: 15px;">分数</span>
+                                                <div class="jkc-position" style="margin-left: 2px;">
+                                                    <div class="jkc-minContent" contenteditable="true"></div>
+                                                </div>
+                                                <div class="jkc-position" style="margin-left: 15px;vertical-align: middle;">
+                                                    <input type="checkbox" class="jkc-checkbox">
+                                                </div>
+                                                <span class="jkc-option" style="margin-left: 5px;">设置正确答案</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="jkc-footer">
+                                        <ul>
+                                            <li style="float: left;"><span class="glyphicon glyphicon-plus-sign jkc-option-plus"> 添加选项</span></li>
+                                            <li><span class="glyphicon glyphicon-trash jkc-card-del"> 删除题卡</span></li>
+                                            <li><span class="glyphicon glyphicon-plus jkc-card-plus"> 添加题卡</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-1 control-label">得分评价</label>
+                        <div class="col-sm-11">
+                            <div class="jkc-bg">
+                                <div class="jkc-subBg">
+                                    <div class="jkc-bg-header">
+                                        <label class="jkc-label">分值区间</label>
+                                        <div class="col-sm-1 jkc-control">
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <label class="jkc-label">——</label>
+                                        <div class="col-sm-1 jkc-control">
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="jkc-bg-body">
+                                        <label class="jkc-label">对应评价</label>
+                                        <textarea></textarea>
+                                    </div>
+                                </div>
+                                <div class="jkc-bg-footer">
+                                    <ul>
+                                        <li style="float: left;"><span class="glyphicon glyphicon-plus jkc-comment-plus"> 添加区间评价</span></li>
+                                        <li style="float: left; margin-left: 15px;"><span class="glyphicon glyphicon-trash jkc-comment-trash"> 删除</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-1 control-label">评分标准</label>
+                        <div class="col-sm-11" style="padding-top:10px ;">
+                            <textarea></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group jkc-group">
+                        <button type="button" class="btn btn-default jkc-comfirm">确认</button>
+                        <button type="button" class="btn btn-default" onclick="history.back()">取消</button>
+                    </div>
+                </form>
+            </div>
+            <div class="panel-footer"></div>
+        </div>
+    </div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/qiniu.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/upload.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/ZongF.js" id="zongfen-js"></script>
+<script type="text/javascript">
+    $(document).on("click", ".upload", function() {
+        var th = $(this);
+        $(document).each(function() {
+            if($(".upload-img").hasClass("fileActive")) {
+                $(".upload-img").removeClass("fileActive");
+                return false;
+            }
+        });
+        th.addClass("fileActive");
+        $("#pickfiles").click();
+    });
+    //获取body的高
+</script>
+
+
+<div id="qb-sougou-search" style="display: none; opacity: 0;"><p>搜索</p><p class="last-btn">复制</p><iframe src=""></iframe></div></body></html>

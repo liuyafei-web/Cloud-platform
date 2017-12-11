@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html><head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <!--<script type="text/javascript" src="js/jquery.media.js"></script>-->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <style type="text/css">
+        body {
+            font-family: '微软雅黑', sans-serif;
+            font-size: 13px;
+            padding-bottom: 40px;
+            background-color: #e9e7ef;
+        }
+
+        .sidebar-nav {
+            padding: 9px 0;
+        }
+
+        @media ( max-width : 980px) {
+            /* Enable use of floated navbar text */
+            .navbar-text.pull-right {
+                float: none;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+        }
+        button[collegeId]{
+            font-family: '微软雅黑', sans-serif;
+            background-color: #93C6EA;
+            border: none;
+            margin: 0 2px;
+            line-height: 30px;
+        }
+        button[collegeId]:hover{
+            background-color: #3B97D8;
+            border: none;
+            margin: 0 2px;
+            line-height: 30px;
+        }
+        .nav {
+            margin:20px;
+            font-size: 18px;
+        }
+        .content {
+            margin:50px;
+            font-size:16px;
+        }
+        .content table tr th{
+            width:15px;
+        }
+        .nav button{
+            margin:0px 20px;
+        }
+        .btn a {
+            text-decoration:none;
+            color:#fff;
+        }
+        .score {
+            margin-left:60px;
+        }
+        .table td {
+            text-align: center;
+            height:38px;
+            line-height: 38px;
+        }
+        td a{
+            padding:10px;
+        }
+        .btn {
+            margin-left:20px;
+        }
+    </style>
+</head>
+<body marginwidth="0" marginheight="0">
+<div class="nav">
+    <span>项目管理</span> &gt; <span>总库项目</span>
+</div><hr>
+<form action="Projects_project.html" method="get">
+    大赛名称&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <select name="matchId" id="matchId">
+        <option value=""></option>
+        <option value="109">华普亿方杯创业大赛</option>
+        <option value="110"></option>
+        <option value="111">Cjgg</option>
+        <option value="112"></option>
+        <option value="113"> 她咯哦</option>
+        <option value="114">啤酒文化节</option>
+        <option value="115">跨界歌王</option>
+        <option value="116">北京快乐女生大赛</option>
+        <option value="117">计算机编程大赛</option>
+        <option value="118">nnnnGhh</option>
+        <option value="119">北京华普亿方大赛</option>
+        <option value="120">北京创业大赛----测试大赛</option>
+        <option value="121"></option>
+        <option value="122">jdjdjdj</option>
+        <option value="123">fuucuc</option>
+        <option value="124"></option>
+        <option value="125"></option>
+        <option value="126">urjgxjxj</option>
+    </select>
+    项目名称&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="text" name="projectName" value="">
+    发起人&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="text" name="creator" value=""><br><br>
+    上传时间&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <select name="createTime" id="createTime">
+        <option value=""></option>
+        <option value="1483200000">2017</option>
+        <option value="1451577600">2016</option>
+        <option value="1420041600">2015</option>        </select>
+    联系电话&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="text" name="tel" value="">
+    <input type="submit" class="btn btn-primary" value="查询">
+    <a class="btn btn-primary" onclick="explote()">导出</a>
+    <!--<a class="btn btn-primary" href="/index.php/Admin/Projects/exportProject.html">导出</a>
+--></form><br><br>
+<input id="checkAll" type="checkbox" style="margin-left:34px;margin-bottom:8px">&nbsp;&nbsp;全选&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="javascript:;" data-toggle="modal" data-target="#myModal" onclick="addSelected()">移动选中项</a>
+<table class="table table-hover table-bordered" id="input-selected">
+    <thead>
+    <tr>
+        <th>选择</th>
+        <th>参与大赛</th>
+        <th>项目名称</th>
+        <th>项目发起人</th>
+        <th>联系电话</th>
+        <th>上传时间</th>
+        <th>操作</th>
+        <th>商业计划书</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><input class="checkbox" style="width:14px;" type="checkbox" value="51"></td>
+        <td></td>
+        <td>拉拉票仑头模具设计吐露皮计算机</td>
+        <td>不把他他他他数据库露露阿图罗啊人见人夸撒</td>
+        <td>13832525252</td>
+        <td>2017-08-01 11:21</td>
+        <td>
+            <a href="javascript:;" data-toggle="modal" data-target="#myModal" onclick="add(51)">移动</a>
+        </td>
+        <td>
+            暂无
+        </td>
+    </tr><tr>
+        <td><input class="checkbox" style="width:14px;" type="checkbox" value="50"></td>
+        <td></td>
+        <td>咯我在</td>
+        <td>同</td>
+        <td>13938065494</td>
+        <td>2017-07-25 17:34</td>
+        <td>
+            <a href="javascript:;" data-toggle="modal" data-target="#myModal" onclick="add(50)">移动</a>
+        </td>
+        <td>
+            暂无
+        </td>
+    </tr>        </tbody>
+    <tbody><tr><td style="font-size: 15px" colspan="9">
+        <div>共52页
+            <a class="prev" href="javascript:;">上一页</a>
+            <a class="num" href="javascript:;">1</a>
+            <a class="num" href="javascript:;">2</a>
+            <a class="num" href="javascript:;">3</a>
+            <a class="num" href="javascript:;">4</a>
+            <a class="num" href="javascript:;">5</a>
+            <a class="num" href="javascript:;">6</a>
+            <a class="num" href="javascript:;">7</a>
+            <a class="num" href="javascript:;">8</a>
+            <a class="num" href="javascript:;">9</a>
+            <a class="num" href="javascript:;">10</a>
+            <a class="num" href="javascript:;">11</a>
+            <a class="next" href="javascript:;">下一页</a>
+            <a class="end" href="javascript:;">52</a>
+        </div>
+    </td></tr>
+    </tbody></table>
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    请选择要移动的位置
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form action="Projects_moveProject.html" method="post" id="form-input">
+                    <select id="match" name="matchId" onchange="matchChange()">
+                        <option value="" selected="selected">请选择</option>
+                        <option value="109">华普亿方杯创业大赛</option><option value="110"></option><option value="111">Cjgg</option><option value="112"></option><option value="113"> 她咯哦</option><option value="114">啤酒文化节</option><option value="115">跨界歌王</option><option value="116">北京快乐女生大赛</option><option value="117">计算机编程大赛</option><option value="118">nnnnGhh</option><option value="119">北京华普亿方大赛</option><option value="120">北京创业大赛----测试大赛</option><option value="121"></option><option value="122">jdjdjdj</option><option value="123">fuucuc</option><option value="124"></option><option value="125"></option><option value="126">urjgxjxj</option>                    </select>
+                    <select id="division" name="divisionId" onchange="divisionChange()">
+                    </select>
+                    <select id="schedule" name="scheduleId">
+
+                    </select><br>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消
+                    </button>
+                    <button type="submit" class="btn btn-primary">
+                        确认
+                    </button>
+                </form>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<script>
+    $(document).ready(function(){
+        $("#checkAll").click(function(){
+            if(this.checked)
+            {
+                $("input[class='checkbox']").each(function(){
+                    this.checked=true;
+                });
+                // $("[name='checkbox']").attr("checked",'true');
+            }
+            else
+            {
+                $("input[class='checkbox']").each(function(){
+                    this.checked=false;
+                });
+                //$("[name='checkbox']").attr("checked",'false');
+            }
+
+        });
+    });
+    function add(obj){
+        $("#form-input input").remove();
+        $("#form-input").append("<input type='hidden' name='projectIds[]' value='"+obj+"'>");
+    }
+    function addSelected(){
+        $("#form-input input").remove();
+//        var num=0;
+        $("#input-selected input[type='checkbox']").each(function(){
+            if(this.checked){
+//                num++;
+                $("#form-input").append("<input type='hidden' name='projectIds[]' value='"+this.value+"'>");
+            }
+        });
+//        if(num==0){
+//            alert('未选中任何项目');
+//            return false;
+//        }
+    }
+    function matchChange(){
+        $("#schedule").attr('disabled',true);
+        $("#division").empty();
+        $("#schedule").empty();
+        var url = "http://app.hopefound.cn:8080/index.php/Admin/Common/divisionList";
+        matchId = $("#match").val();
+        data = {};
+        data['matchId'] = matchId;
+        $.post(url,data,function(e){
+            if(e.length>0){
+                $("#division").attr("disabled",false);
+                $("#division").append("<option value=''>请选择</option>");
+                for(var i=0;i<e.length;i++){
+                    $("#division").append("<option value="+e[i]["id"]+">"+e[i]["name"]+"</option>");
+                }
+            }else{
+                $("#division").attr("disabled",true);
+            }
+        },'json');
+        return false;
+    }
+    function divisionChange(){
+        var url = "http://app.hopefound.cn:8080/index.php/Admin/Common/scheduleList";
+        divisionId = $("#division").val();
+        data = {};
+        data['divisionId'] = divisionId;
+        $.post(url,data,function(e){
+            if(e.length>0){
+                $("#schedule").attr("disabled",false);
+                $("#schedule").append("<option value=''>请选择</option>");
+                for(var i=0;i<e.length;i++){
+                    $("#schedule").append("<option value="+e[i]["id"]+">"+e[i]["name"]+"</option>");
+                }
+            }else{
+                $("#schedule").attr("disabled",true);
+            }
+        },'json');
+        return false;
+    }
+    //导出
+    function explote(){
+        var matchId =  $("#matchId").val();
+        var projectName =  $("input[name='projectName']").val();
+        var creator =  $("input[name='creator']").val();
+        var createTime =  $("#createTime").val();
+        var tel =  $("input[name='tel']").val();
+        location.href="/index.php/Admin/Projects/exportProject.html"+"?projectName="+projectName+"&matchId="+matchId+"&creator="+creator+"&createTime="+createTime+"&tel="+tel;
+    }
+</script>
+
+
+</body>
+</html>

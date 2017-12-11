@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html><head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <style type="text/css">
+        body {
+            font-family: '微软雅黑', sans-serif;
+            font-size: 13px;
+            padding-bottom: 40px;
+            background-color: #e9e7ef;
+        }
+
+        .sidebar-nav {
+            padding: 9px 0;
+        }
+
+        @media ( max-width : 980px) {
+            /* Enable use of floated navbar text */
+            .navbar-text.pull-right {
+                float: none;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+        }
+        button[collegeId]{
+            font-family: '微软雅黑', sans-serif;
+            background-color: #93C6EA;
+            border: none;
+            margin: 0 2px;
+            line-height: 30px;
+        }
+        button[collegeId]:hover{
+            background-color: #3B97D8;
+            border: none;
+            margin: 0 2px;
+            line-height: 30px;
+        }
+        .nav {
+            margin:20px;
+            font-size: 18px;
+        }
+        .content {
+            margin:100px;
+            text-align: center;
+            font-size:16px;
+        }
+        .content p{
+            margin-left:80px;
+            font-size:14px;
+        }
+        .file {
+            position: relative;
+            display: inline-block;
+            background: #D0EEFF;
+            border: 1px solid #99D3F5;
+            border-radius: 4px;
+            padding: 4px 12px;
+            overflow: hidden;
+            color: #1E88C7;
+            text-decoration: none;
+            text-indent: 0;
+            line-height: 20px;
+        }
+        .file input {
+            position: absolute;
+            font-size: 100px;
+            right: 0;
+            top: 0;
+            opacity: 0;
+        }
+        .file:hover {
+            background: #AADFFD;
+            border-color: #78C3F3;
+            color: #004974;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body marginwidth="0" marginheight="0">
+<div class="nav">
+    <span>账户管理</span> &gt; <span>大赛账户</span> &gt; <span>编辑</span>
+    <div class="pull-right">
+        <a href="Account_matchView.html?id=503&amp;matchName=&amp;p=">返回</a>
+    </div>
+</div><hr>
+<form enctype="multipart/form-data" class="content" method="post" action="Account_editMatch.html?matchName=&amp;p=">
+    <input type="hidden" name="matchId" value="503">
+    <img src="" alt="logo" height="200" width="200"><br>
+
+    <a href="javascript:;" class="file">选择文件
+        <input type="file" name="img" style="margin-left:100px">
+    </a><br><br>
+    大赛名称<br>
+    <input type="text" name="name" value="测试大赛1" required="required"><br><br>
+    地址<br>
+    <input type="text" name="address" value="" required="required"><br><br>
+    邮箱<br>
+    <input type="text" name="email" value="" required="required"><br><br>
+    联系电话<br>
+    <input type="text" name="tel" value="" required="required"><br><br>
+    大赛介绍<br>
+    <textarea rows="8" name="introduce"></textarea><br>
+
+    <a class="btn btn-default" href="Account_matchView.html?id=503">取消</a><button type="submit" class="btn btn-default">确认</button>
+</form>
+
+</body></html>

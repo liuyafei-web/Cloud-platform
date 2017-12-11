@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html><head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <style type="text/css">
+        body {
+            font-family: '微软雅黑', sans-serif;
+            font-size: 13px;
+            padding-bottom: 40px;
+            background-color: #e9e7ef;
+        }
+
+        .sidebar-nav {
+            padding: 9px 0;
+        }
+
+        @media ( max-width : 980px) {
+            /* Enable use of floated navbar text */
+            .navbar-text.pull-right {
+                float: none;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+        }
+        button[matchId]{
+            font-family: '微软雅黑', sans-serif;
+            background-color: #93C6EA;
+            border: none;
+            margin: 0 2px;
+            line-height: 30px;
+        }
+        button[matchId]:hover{
+            background-color: #3B97D8;
+            border: none;
+            margin: 0 2px;
+            line-height: 30px;
+        }
+        div.nav {
+            padding:20px;
+            font-size: 18px;
+        }
+        .nav button{
+            margin:0px 20px;
+        }
+        .btn a {
+            text-decoration:none;
+            color:#fff;
+        }
+        tr th{
+            width:18%;
+        }
+        #operate {
+            width:28%;
+        }
+        td a{
+            padding:10px;
+        }
+        .pull-right{
+            margin-left:50px;
+        }
+    </style>
+</head>
+<body marginwidth="0" marginheight="0">
+<div class="nav">
+    <span>账户管理</span> &gt; <span>创业大赛</span>
+    <a class="btn btn-primary pull-right" href="javascript:;">导出</a>
+    <a class="btn btn-primary pull-right" href="http://app.hopefound.cn:8080/Application/Admin/View/addCount/addCount.html">新增</a>
+</div><hr>
+<form class="form-inline definewidth m20" action="Account_matchList.html" method="get">
+    <input type="text" name="matchName" id="menuname" class="abc input-default" placeholder="大赛名称" value="">&nbsp;&nbsp;
+    <button type="submit" class="btn btn-primary">搜索</button>
+</form>
+<table class="table table-bordered table-hover definewidth m10">
+    <thead>
+    <tr>
+        <th>大赛名称</th>
+        <th>大赛帐号</th>
+        <th>联系方式</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody><tr>
+        <td>北京创业大赛1</td>
+        <td>beijingchuangyedasai</td>
+        <td></td>
+        <td id="operate">
+            <a href="Account_matchView.html?id=504&amp;matchName=&amp;p=">查看</a>
+            <a href="javascript:;" onclick="disp_confirm(504)">删除</a>
+            <!--<a href="/index.php/Admin/Account/disableMatch.html?id=504">封号/解封</a>-->
+            <a id="disable-account" href="javascript:;" data-toggle="modal" data-target="#disableModal" onclick="changeId(504)">
+                封号
+            </a>
+            <a href="javascript:;" onclick="repass(504)">重置密码</a>
+        </td>
+    </tr><tr>
+        <td>测试大赛1</td>
+        <td>testuser</td>
+        <td></td>
+        <td id="operate">
+            <a href="Account_matchView.html?id=503&amp;matchName=&amp;p=">查看</a>
+            <a href="javascript:;" onclick="disp_confirm(503)">删除</a>
+            <!--<a href="/index.php/Admin/Account/disableMatch.html?id=503">封号/解封</a>-->
+            <a id="disable-account" href="javascript:;" data-toggle="modal" data-target="#disableModal" onclick="changeId(503)">
+                封号
+            </a>
+            <a href="javascript:;" onclick="repass(503)">重置密码</a>
+        </td>
+    </tr><tr>
+        <td>测试大赛</td>
+        <td>test123456</td>
+        <td></td>
+        <td id="operate">
+            <a href="Account_matchView.html?id=499&amp;matchName=&amp;p=">查看</a>
+            <a href="javascript:;" onclick="disp_confirm(499)">删除</a>
+            <!--<a href="/index.php/Admin/Account/disableMatch.html?id=499">封号/解封</a>-->
+            <a id="disable-account" href="javascript:;" data-toggle="modal" data-target="#disableModal" onclick="changeId(499)">
+                封号
+            </a>
+            <a href="javascript:;" onclick="repass(499)">重置密码</a>
+        </td>
+    </tr>
+
+    <tr><td style="font-size: 15px" colspan="9"><div>共1页     </div></td></tr>
+
+    </tbody></table>
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="disableModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    ×
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    封号确认
+                </h4>
+            </div>
+            <form id="input-form" action="/index.php/Admin/Account/disableMatch.html" method="post">
+                <input id="match-id" type="hidden" name="id" value="">
+                <div class="modal-body">
+                    请选择封号时长
+                    <select id="forbidden" name="forbidden">
+                        <option value="259200">3天</option>
+                        <option value="604800">7天</option>
+                        <option value="2592000">30天</option>
+                        <option value="15552000">180天</option>
+                        <option value="31536000">365天</option>
+                        <option value="315360000">永久</option>
+                    </select>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="submit" id="submit" class="btn btn-primary">确认</button>
+                </div>
+            </form>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+
+<script type="text/javascript">
+    function disp_confirm(id){
+        var r=confirm("确定要删除吗？");
+        if(r==true){
+            location.href="http://app.hopefound.cn:8080/Admin/Account/deleteMatch?id="+id;
+        }
+    }
+    function repass(id){
+        var r=confirm("确定要重置密码吗？");
+        if(r==true){
+            location.href="http://app.hopefound.cn:8080/Admin/Account/resetPassMatch?id="+id;
+        }
+    }
+</script>
+<script type="text/javascript">
+    function changeId(id){
+        $("#match-id").val(id);
+    }
+    $(document).ready(function(){
+        $("#submit").click(function(){
+            var matchId = $("#match-id").val();
+            forbidden = $("#forbidden").val();
+            url = $("#input-form").attr('action');
+            data = {};
+            data['matchId'] = matchId;
+            data['forbidden'] = forbidden;
+            $.post(url, data, function(e) {
+                if(e.status==0){
+                    window.location.reload();//刷新当前页面
+                }else{
+                    alert('操作失败');
+                }
+            },'json');
+            return false;
+        });
+    });
+</script>
+</body></html>

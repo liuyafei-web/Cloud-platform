@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html><head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <style type="text/css">
+        body {
+            font-family: '微软雅黑', sans-serif;
+            font-size: 13px;
+            padding-bottom: 40px;
+            background-color: #e9e7ef;
+        }
+
+        .sidebar-nav {
+            padding: 9px 0;
+        }
+
+        @media ( max-width : 980px) {
+            /* Enable use of floated navbar text */
+            .navbar-text.pull-right {
+                float: none;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+        }
+        button[collegeId]{
+            font-family: '微软雅黑', sans-serif;
+            background-color: #93C6EA;
+            border: none;
+            margin: 0 2px;
+            line-height: 30px;
+        }
+        button[collegeId]:hover{
+            background-color: #3B97D8;
+            border: none;
+            margin: 0 2px;
+            line-height: 30px;
+        }
+        .nav {
+            margin:20px;
+            font-size: 18px;
+        }
+        .content {
+            margin:50px;
+            font-size:16px;
+        }
+        .content table tr th{
+            width:15px;
+        }
+        .nav button{
+            margin:0px 20px;
+        }
+        .btn a {
+            text-decoration:none;
+            color:#fff;
+        }
+        .score {
+            margin-left:60px;
+        }
+        .table td {
+            text-align: center;
+            height:38px;
+            line-height: 38px;
+        }
+        .btn {
+            margin-left:20px;
+        }
+        .delbutton{
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body marginwidth="0" marginheight="0">
+<div class="nav">
+    <span>排行管理</span> &gt; <span>花草逗逼排行榜</span><br><br>
+    <a class="btn btn-primary pull-right" href="/index.php/Admin/Rank/exportFunnyRank.html?universityId=">导出</a>
+    <form action="Rank_funnyRank.html" method="get">
+        <input type="text" name="universityName" placeholder="输入高校名" value="">
+        <button type="submit" class="btn btn-primary">搜索</button>
+    </form>
+
+</div><hr>
+<div class="apply">
+    <table class="table table-hover table-bordered">
+        <thead>
+        <tr>
+            <th>排名</th>
+            <th>昵称</th>
+            <th>照片</th>
+            <th>赞</th>
+            <th>踩</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td>宏强</td>
+            <td><img src="http://ogbcmnvf7.bkt.clouddn.com/149861931412257.jpg" alt="照片" height="100" width="100"></td>
+            <td>68</td>
+            <td>9</td>
+            <td class="delbutton" onclick="delRank('123')">删除</td>
+        </tr><tr>
+            <td>2</td>
+            <td>古月</td>
+            <td><img src="http://ogbcmnvf7.bkt.clouddn.com/149844762123427.jpg" alt="照片" height="100" width="100"></td>
+            <td>67</td>
+            <td>11</td>
+            <td class="delbutton" onclick="delRank('122')">删除</td>
+        </tr><tr>
+            <td>3</td>
+            <td>王鑫亮</td>
+            <td><img src="http://ogbcmnvf7.bkt.clouddn.com/149509772711493.jpg" alt="照片" height="100" width="100"></td>
+            <td>55</td>
+            <td>28</td>
+            <td class="delbutton" onclick="delRank('120')">删除</td>
+        </tr>            </tbody>
+        <tbody>
+        <tr>
+            <td style="font-size: 15px" colspan="9">
+                <div>共2页
+                    <a class="prev" href="javascript:;">上一页</a>
+                    <a class="num" href="javascript:;">1</a>
+                    <a class="num" href="javascript:;">2</a>
+                    <a class="next" href="javascript:;">下一页</a>
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+</div>
+
+<script type="text/javascript">
+    function delRank (id){
+        var url = "/index.php/Admin/Rank/delRank.html?id="+id;
+        if(confirm("确定要删除吗？")){
+            $.get(url,function(data,status){
+                if(data.errorCode==0){
+                    alert(data.info);
+                    window.location.reload();
+                }else{
+                    alert(data.errorMsg);
+                }
+
+            });
+
+        }
+    }
+</script>
+</body></html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html><head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <style type="text/css">
+        body {
+            font-family: '微软雅黑', sans-serif;
+            font-size: 13px;
+            padding-bottom: 40px;
+            background-color: #e9e7ef;
+        }
+
+        .sidebar-nav {
+            padding: 9px 0;
+        }
+
+        @media ( max-width : 980px) {
+            /* Enable use of floated navbar text */
+            .navbar-text.pull-right {
+                float: none;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+        }
+        button[collegeId]{
+            font-family: '微软雅黑', sans-serif;
+            background-color: #93C6EA;
+            border: none;
+            margin: 0 2px;
+            line-height: 30px;
+        }
+        button[collegeId]:hover{
+            background-color: #3B97D8;
+            border: none;
+            margin: 0 2px;
+            line-height: 30px;
+        }
+        .nav {
+            margin:20px;
+            font-size: 18px;
+        }
+        .content {
+            width:100%;
+            margin:0 auto;
+            font-size:16px;
+        }
+        .content table tr th{
+            width:15px;
+        }
+        .nav button{
+            margin:0px 20px;
+        }
+        .btn a {
+            text-decoration:none;
+            color:#fff;
+        }
+        .score {
+            margin-left:60px;
+        }
+        .table td {
+            text-align: center;
+            height:38px;
+            line-height: 38px;
+        }
+        .table th {
+            width:33%;
+        }
+        .btn {
+            margin-left:20px;
+        }
+    </style>
+</head>
+<body marginwidth="0" marginheight="0">
+<div class="nav">
+    <span>当前位置：</span><span>发布管理</span>&gt;&gt;<span>恋爱心理学</span>
+    <a class="btn btn-primary pull-right" href="Release_addLovePsychology.html">发布新消息</a><br><br>
+</div><hr>
+<div class="">
+    <table class="table table-hover table-bordered">
+        <thead>
+        <tr>
+            <th>时间</th>
+            <th>消息</th>
+            <th colspan="3">操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>2017.07.18</td>
+            <td>恋爱心理学20170718001</td>
+            <td><a href="javascript:;" onclick="disp_confirm(297)">删除</a></td>
+            <td><a href="Release_editMsg.html?id=297">编辑</a></td>
+            <td><a href="/index.php/Admin/Release/topMsg.html?id=297&amp;type=6">置顶</a></td>
+        </tr><tr>
+            <td>2017.06.19</td>
+            <td>情商高手，从不主动表现自己</td>
+            <td><a href="javascript:;" onclick="disp_confirm(273)">删除</a></td>
+            <td><a href="Release_editMsg.html?id=273">编辑</a></td>
+            <td><a href="/index.php/Admin/Release/topMsg.html?id=273&amp;type=6">置顶</a></td>
+        </tr><tr>
+            <td>2017.06.13</td>
+            <td>整容能让你找回爱情吗？</td>
+            <td><a href="javascript:;" onclick="disp_confirm(239)">删除</a></td>
+            <td><a href="Release_editMsg.html?id=239">编辑</a></td>
+            <td><a href="/index.php/Admin/Release/topMsg.html?id=239&amp;type=6">置顶</a></td>
+        </tr>
+        </tbody>
+        <tbody>
+        <tr>
+            <td style="font-size: 15px" colspan="9">
+                <div>共6页
+                    <a class="prev" href="javascript:;">上一页</a>
+                    <a class="num" href="/index.php/Admin/Release/lovePsychology/p/1.html">1</a>
+                    <a class="num" href="/index.php/Admin/Release/lovePsychology/p/2.html">2</a>
+                    <a class="num" href="/index.php/Admin/Release/lovePsychology/p/3.html">3</a>
+                    <a class="num" href="/index.php/Admin/Release/lovePsychology/p/4.html">4</a>
+                    <a class="num" href="/index.php/Admin/Release/lovePsychology/p/5.html">5</a>
+                    <a class="num" href="/index.php/Admin/Release/lovePsychology/p/6.html">6</a>
+                    <a class="next" href="/index.php/Admin/Release/lovePsychology/p/2.html">下一页</a>
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+</div>
+
+<script type="text/javascript">
+    function disp_confirm(id){
+        var r=confirm("确定要删除吗？")
+        if(r==true){
+            location.href="http://app.hopefound.cn:8080/Admin/Release/deleteMsg?id="+id;
+        }
+    }
+</script>
+</body></html>

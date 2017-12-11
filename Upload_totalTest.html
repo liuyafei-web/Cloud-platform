@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html><head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <style type="text/css">
+        body {
+            font-family: '微软雅黑', sans-serif;
+            font-size: 13px;
+            padding-bottom: 40px;
+            background-color: #e9e7ef;
+        }
+
+        .sidebar-nav {
+            padding: 9px 0;
+        }
+
+        @media ( max-width : 980px) {
+            /* Enable use of floated navbar text */
+            .navbar-text.pull-right {
+                float: none;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+        }
+        button[collegeId]{
+            font-family: '微软雅黑', sans-serif;
+            background-color: #93C6EA;
+            border: none;
+            margin: 0 2px;
+            line-height: 30px;
+        }
+        button[collegeId]:hover{
+            background-color: #3B97D8;
+            border: none;
+            margin: 0 2px;
+            line-height: 30px;
+        }
+        .nav {
+            margin:20px;
+            font-size: 18px;
+        }
+        .content {
+            width:100%;
+            margin:0 auto;
+            font-size:16px;
+        }
+        .content table tr th{
+            width:15px;
+        }
+        .nav button{
+            margin:0px 20px;
+        }
+        .btn a {
+            text-decoration:none;
+            color:#fff;
+        }
+        .score {
+            margin-left:60px;
+        }
+        .btn {
+            margin-left:20px;
+        }
+        form {
+            margin-left:600px;
+        }
+    </style>
+</head>
+<body marginwidth="0" marginheight="0">
+<div class="nav">
+    <button class="btn btn-primary btn-total" id="total-test">总分制</button>
+    <button class="btn" id="group-test">组分制</button>
+</div><hr>
+<div id="total-content">
+    <table class="table table-hover table-bordered">
+        <thead>
+        <tr>
+            <th>题号</th>
+            <th>题目名</th>
+            <th>题数</th>
+            <th>总分</th>
+            <th colspan="2">操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td>创业时机测评</td>
+            <td>17</td>
+            <td>17</td>
+            <td><a href="http://app.hopefound.cn:8080/Application/Admin/View/addQuestion/saveHtml24.html?id=24&amp;1508377154">编辑</a></td>
+            <!-- <td><a href="/index.php/Admin/Upload/editTotalTest.html?testId=24">编辑</a></td> -->
+            <td><a href="javascript:;" onclick="disp_confirm(24)">删除</a></td>
+        </tr><tr>
+            <td>2</td>
+            <td>沟通能力测试</td>
+            <td>10</td>
+            <td>30</td>
+            <td><a href="http://app.hopefound.cn:8080/Application/Admin/View/addQuestion/saveHtml45.html?id=45&amp;1508377154">编辑</a></td>
+            <!-- <td><a href="/index.php/Admin/Upload/editTotalTest.html?testId=45">编辑</a></td> -->
+            <td><a href="javascript:;" onclick="disp_confirm(45)">删除</a></td>
+        </tr><tr>
+            <td>3</td>
+            <td>竞争能力测评测试</td>
+            <td>26</td>
+            <td>127</td>
+            <td><a href="http://app.hopefound.cn:8080/Application/Admin/View/addQuestion/saveHtml50.html?id=50&amp;1508377154">编辑</a></td>
+            <!-- <td><a href="/index.php/Admin/Upload/editTotalTest.html?testId=50">编辑</a></td> -->
+            <td><a href="javascript:;" onclick="disp_confirm(50)">删除</a></td>
+        </tr>            </tbody>
+    </table>
+    <a href="Upload_newZuF.html" style="margin-left:50px">添加新题目</a>
+</div>
+
+<div class="hidden" id="group-content">
+    <table class="table table-hover table-bordered">
+        <thead>
+        <tr>
+            <th>题号</th>
+            <th>题目名</th>
+            <th>题数</th>
+            <th>总分</th>
+            <th colspan="2">操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <a href="Upload_newZuF.html" style="margin-left:50px">添加新题目</a>
+</div>
+
+<script>
+    $(function(){
+        $("#total-test").click(function(){
+            $(this).addClass("btn-primary").siblings().removeClass("btn-primary"); //切换选中的按钮高亮状态
+            $("#total-content").show();
+            $("#group-content").addClass("hidden");
+        });
+        $("#group-test").click(function(){
+            $(this).addClass("btn-primary").siblings().removeClass("btn-primary"); //切换选中的按钮高亮状态
+            $("#group-content").removeClass("hidden");
+            $("#total-content").hide();
+        });
+    });
+</script>
+<script type="text/javascript">
+    function disp_confirm(id){
+        var r=confirm("确定要删除吗？")
+        if(r==true){
+            location.href="http://app.hopefound.cn:8080/Admin/Upload/deleteTotalTest?testId="+id;
+        }
+    }
+</script>
+
+</body></html>

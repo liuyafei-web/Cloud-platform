@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>后台登录</title>
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+</head>
+<body>
+
+
+<div class="wrapper">
+    <div class="container">
+        <h1>赢之道后台管理</h1>
+        <form class="form" action="index.html" method="post">
+            <input type="text" id="userid" placeholder="用户名" name="userid">
+            <input type="password" id="password" placeholder="密码" name="password"><br>
+            <span id="tips"></span><br>
+            <input type="submit" id="login-button" value="登录">
+
+        </form>
+    </div>
+
+    <ul class="bg-bubbles">
+        <li></li>
+        <li></li>
+
+    </ul>
+
+</div>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('input').click(function(){
+            $('#tips').html('');
+        });
+
+        $('#login-button').click(function(){
+            userid = $('#userid').val();
+            password = $('#password').val();
+            if(userid == ''){
+                $('#tips').css('color','red');
+                $('#tips').html('帐号不能为空');
+                return false;
+            }
+            if(password == ''){
+                $('#tips').css('color','red');
+                $('#tips').html('密码不能为空');
+                return false;
+            }
+            var url = $('.form').attr('action');
+            data = {};
+            data['userid'] = userid;
+            data['password'] = password;
+            $.post(url,data,function(e){
+                if(e.error == 0){
+                    location.href="index.html";
+                }else if(e.error == 1){
+                    $('#tips').css('color','red');
+                    $('#tips').html(e.msg);
+                }
+            },'json');
+            return false;
+        });
+    });
+
+</script>
+
+
+
+</body></html>

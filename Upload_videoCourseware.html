@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html><head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <style type="text/css">
+        body {
+            font-family: '微软雅黑', sans-serif;
+            font-size: 13px;
+            padding-bottom: 40px;
+            background-color: #e9e7ef;
+        }
+
+        .sidebar-nav {
+            padding: 9px 0;
+        }
+
+        @media ( max-width : 980px) {
+            /* Enable use of floated navbar text */
+            .navbar-text.pull-right {
+                float: none;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+        }
+        .nav {
+            margin:20px;
+            font-size: 18px;
+        }
+        .content {
+            width:100%;
+            font-size:16px;
+        }
+        .content table tr th{
+            width:30%;
+        }
+        .content table tr td{
+            padding:10px;
+        }
+    </style>
+</head>
+<body marginwidth="0" marginheight="0">
+<div class="nav">
+    <h3>视频课件上传</h3>
+</div><hr>
+<div class="content">
+    <table class="table table-hover table-bordered" align="left">
+        <thead>
+        <tr>
+            <th>类别</th>
+            <th>课程数</th>
+            <th>日期</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td style="text-align:left;padding-left:150px"><img src="images/fileicon.png" alt="文件夹图标">
+                <a href="Upload_videoTypeDetail.html?typeId=">全部课程</a></td>
+            <td>12</td>
+            <td>2017-10-19</td>
+            <td><a href="javascript:;" data-toggle="modal" data-target="#myModal">添加新分类</a></td>
+        </tr>
+        <tr>
+            <td style="text-align:left;padding-left:150px"><img src="images/fileicon.png" alt="文件夹图标">
+                <a href="Upload_videoTypeDetail.html?typeId=33">初创经营</a></td>
+            <td>2</td>
+            <td>2017-06-01</td>
+            <td><a href="javascript:;" onclick="disp_confirm(33)">删除</a></td>
+        </tr><tr>
+            <td style="text-align:left;padding-left:150px"><img src="images/fileicon.png" alt="文件夹图标">
+                <a href="Upload_videoTypeDetail.html?typeId=32">创业准备</a></td>
+            <td>6</td>
+            <td>2017-06-01</td>
+            <td><a href="javascript:;" onclick="disp_confirm(32)">删除</a></td>
+        </tr><tr>
+            <td style="text-align:left;padding-left:150px"><img src="images/fileicon.png" alt="文件夹图标">
+                <a href="Upload_videoTypeDetail.html?typeId=31">创业认知</a></td>
+            <td>4</td>
+            <td>2017-06-01</td>
+            <td><a href="javascript:;" onclick="disp_confirm(31)">删除</a></td>
+        </tr>            </tbody>
+        <tbody><tr><td style="font-size: 15px" colspan="9"><div>共1页     </div></td></tr>
+        </tbody></table><hr>
+
+</div>
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" style="text-align:center;">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    请输入分类名称
+                </h4>
+            </div>
+            <div class="modal-body" style="text-align:center;">
+                <form action="/index.php/Admin/Upload/addVideoType.html" method="post">
+                    <input type="text" name="type" required="required"><br><br>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消
+                    </button>
+                    <button type="submit" class="btn btn-primary">
+                        确认
+                    </button>
+                </form>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<script>
+    function disp_confirm(id){
+        var r=confirm("确定要删除吗？")
+        if(r==true){
+            location.href="http://app.hopefound.cn:8080/Admin/Upload/deleteVideoType?id="+id;
+        }
+    }
+</script>
+
+</body></html>

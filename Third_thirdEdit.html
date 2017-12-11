@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html><head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <style type="text/css">
+        body {
+            font-family: '微软雅黑', sans-serif;
+            font-size: 13px;
+            padding-bottom: 40px;
+            background-color: #e9e7ef;
+        }
+
+        .sidebar-nav {
+            padding: 9px 0;
+        }
+
+        @media ( max-width : 980px) {
+            /* Enable use of floated navbar text */
+            .navbar-text.pull-right {
+                float: none;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+        }
+        button[collegeId]{
+            font-family: '微软雅黑', sans-serif;
+            background-color: #93C6EA;
+            border: none;
+            margin: 0 2px;
+            line-height: 30px;
+        }
+        button[collegeId]:hover{
+            background-color: #3B97D8;
+            border: none;
+            margin: 0 2px;
+            line-height: 30px;
+        }
+        .nav {
+            margin:20px;
+            font-size: 18px;
+        }
+        .content {
+            margin:50px;
+            font-size:16px;
+        }
+        .content table tr th{
+            width:15px;
+        }
+        .nav button{
+            margin:0px 20px;
+        }
+        .btn a {
+            text-decoration:none;
+            color:#fff;
+        }
+        .score {
+            margin-left:60px;
+        }
+        .table td {
+            text-align: center;
+            height:38px;
+            line-height: 38px;
+        }
+        .btn {
+            margin-left:20px;
+        }
+        form {
+            margin-left:100px;
+        }
+    </style>
+</head>
+<body marginwidth="0" marginheight="0">
+<div class="nav">
+    <span>第三方管理</span> &gt; <span>第三方列表</span> &gt; <span>修改</span>
+    <a class="btn btn-primary pull-right" href="Third_thirdList.html">返回</a><br><br>
+</div><hr>
+<form enctype="multipart/form-data" action="Third_thirdEdit.html" method="post">
+    <input type="hidden" name="id" value="52">
+    <img src="http://ogbcmnvf7.bkt.clouddn.com/3de7f5aeefc71236af13e45f7f7e722e.jpeg" alt="图片" style="width:200px;height:200px"><input type="file" name="img"><br><br>
+    标题<br>
+    <input type="text" name="title" value="888" required="required"><br><br>
+    说明<br>
+    <textarea name="brief" cols="30" rows="10" required="required">333</textarea><br>
+    链接<br>
+    <input type="text" name="url" value="https://www.aliyun.com/?utm_medium=text&amp;utm_source=bdbrand&amp;utm_campaign=bdbrand&amp;utm_content=se_32492" required="required"><br><br>
+    <button type="submit" class="btn btn-primary">保存修改</button>
+</form>
+
+</body></html>

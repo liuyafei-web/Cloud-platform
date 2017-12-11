@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html><head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <style type="text/css">
+        body {
+            font-family: '微软雅黑', sans-serif;
+            font-size: 13px;
+            padding-bottom: 40px;
+            background-color: #e9e7ef;
+        }
+
+        .sidebar-nav {
+            padding: 9px 0;
+        }
+
+        @media ( max-width : 980px) {
+            /* Enable use of floated navbar text */
+            .navbar-text.pull-right {
+                float: none;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+        }
+        button[collegeId]{
+            font-family: '微软雅黑', sans-serif;
+            background-color: #93C6EA;
+            border: none;
+            margin: 0 2px;
+            line-height: 30px;
+        }
+        button[collegeId]:hover{
+            background-color: #3B97D8;
+            border: none;
+            margin: 0 2px;
+            line-height: 30px;
+        }
+        div.nav {
+            padding:20px;
+            font-size: 18px;
+        }
+        .nav button{
+            margin:0px 20px;
+        }
+        .btn a {
+            text-decoration:none;
+            color:#fff;
+        }
+        tr th{
+            width:18%;
+        }
+        #operate {
+            width:28%;
+        }
+        td a{
+            padding:10px;
+        }
+    </style>
+</head>
+<body marginwidth="0" marginheight="0">
+<div class="nav">
+    <span>账户管理</span> &gt; <span>普通用户</span>
+    <a class="btn btn-primary pull-right" href="javascript:;">导出</a>
+</div><hr>
+<table class="table table-bordered table-hover definewidth m10">
+    <thead>
+    <tr>
+        <th>用户名</th>
+        <th>联系方式</th>
+        <th colspan="2">操作</th>
+    </tr>
+    </thead>
+    <tbody><tr>
+        <td>hhhh</td>
+        <td>15011477467</td>
+        <td>
+            <a href="Account_commonUserView.html?id=175">查看</a>
+        </td>
+        <td>
+            <!--<a href="/index.php/Admin/Account/disableUser.html?id=175">封号/解封</a>-->
+            <a id="disable-account" href="javascript:;" data-toggle="modal" data-target="#disableModal">
+                封号
+            </a>
+            <!-- 模态框（Modal） -->
+            <div class="modal fade" id="disableModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                ×
+                            </button>
+                            <h4 class="modal-title" id="myModalLabel">
+                                封号确认
+                            </h4>
+                        </div>
+                        <form id="input-form" action="Account_disableUser.html" method="post">
+                            <input id="user-id" type="hidden" name="userId" value="175">
+                            <div class="modal-body">
+                                请选择封号时长
+                                <select id="forbidden" name="forbidden">
+                                    <option value="259200">3天</option>
+                                    <option value="604800">7天</option>
+                                    <option value="2592000">30天</option>
+                                    <option value="15552000">180天</option>
+                                    <option value="31536000">365天</option>
+                                    <option value="315360000">永久</option>
+                                </select>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">取消
+                                </button>
+                                <button type="submit" id="submit" class="btn btn-primary">确认</button>
+                            </div>
+                        </form>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal -->
+            </div>
+        </td>
+    </tr><tr>
+        <td>刘晓东</td>
+        <td>15553867741</td>
+        <td>
+            <a href="Account_commonUserView.html?id=155">查看</a>
+        </td>
+        <td>
+            <!--<a href="/index.php/Admin/Account/disableUser.html?id=155">封号/解封</a>-->
+            <a id="disable-account" href="javascript:;" data-toggle="modal" data-target="#disableModal">
+                封号
+            </a>
+            <!-- 模态框（Modal） -->
+            <div class="modal fade" id="disableModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                ×
+                            </button>
+                            <h4 class="modal-title" id="myModalLabel">
+                                封号确认
+                            </h4>
+                        </div>
+                        <form id="input-form" action="Account_disableUser.html" method="post">
+                            <input id="user-id" type="hidden" name="userId" value="155">
+                            <div class="modal-body">
+                                请选择封号时长
+                                <select id="forbidden" name="forbidden">
+                                    <option value="259200">3天</option>
+                                    <option value="604800">7天</option>
+                                    <option value="2592000">30天</option>
+                                    <option value="15552000">180天</option>
+                                    <option value="31536000">365天</option>
+                                    <option value="315360000">永久</option>
+                                </select>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">取消
+                                </button>
+                                <button type="submit" id="submit" class="btn btn-primary">确认</button>
+                            </div>
+                        </form>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal -->
+            </div>
+        </td>
+    </tr><tr>
+        <td>郑大美</td>
+        <td>13850095900</td>
+        <td>
+            <a href="Account_commonUserView.html?id=147">查看</a>
+        </td>
+        <td>
+            <!--<a href="/index.php/Admin/Account/disableUser.html?id=147">封号/解封</a>-->
+            <a id="disable-account" href="javascript:;" data-toggle="modal" data-target="#disableModal">
+                封号
+            </a>
+            <!-- 模态框（Modal） -->
+            <div class="modal fade" id="disableModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                ×
+                            </button>
+                            <h4 class="modal-title" id="myModalLabel">
+                                封号确认
+                            </h4>
+                        </div>
+                        <form id="input-form" action="Account_disableUser.html" method="post">
+                            <input id="user-id" type="hidden" name="userId" value="147">
+                            <div class="modal-body">
+                                请选择封号时长
+                                <select id="forbidden" name="forbidden">
+                                    <option value="259200">3天</option>
+                                    <option value="604800">7天</option>
+                                    <option value="2592000">30天</option>
+                                    <option value="15552000">180天</option>
+                                    <option value="31536000">365天</option>
+                                    <option value="315360000">永久</option>
+                                </select>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">取消
+                                </button>
+                                <button type="submit" id="submit" class="btn btn-primary">确认</button>
+                            </div>
+                        </form>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal -->
+            </div>
+        </td>
+    </tr><tr>
+        <td>一盏阿胶</td>
+        <td>18853738767</td>
+        <td>
+            <a href="Account_commonUserView.html?id=1">查看</a>
+        </td>
+        <td>
+            <!--<a href="/index.php/Admin/Account/disableUser.html?id=1">封号/解封</a>-->
+            <a id="disable-account" href="javascript:;" data-toggle="modal" data-target="#disableModal">
+                封号
+            </a>
+            <!-- 模态框（Modal） -->
+            <div class="modal fade" id="disableModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                ×
+                            </button>
+                            <h4 class="modal-title" id="myModalLabel">
+                                封号确认
+                            </h4>
+                        </div>
+                        <form id="input-form" action="Account_disableUser.html" method="post">
+                            <input id="user-id" type="hidden" name="userId" value="1">
+                            <div class="modal-body">
+                                请选择封号时长
+                                <select id="forbidden" name="forbidden">
+                                    <option value="259200">3天</option>
+                                    <option value="604800">7天</option>
+                                    <option value="2592000">30天</option>
+                                    <option value="15552000">180天</option>
+                                    <option value="31536000">365天</option>
+                                    <option value="315360000">永久</option>
+                                </select>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">取消
+                                </button>
+                                <button type="submit" id="submit" class="btn btn-primary">确认</button>
+                            </div>
+                        </form>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal -->
+            </div>
+        </td>
+    </tr>
+
+    <tr><td style="font-size: 15px" colspan="9"><div>共1页     </div></td></tr>
+
+    </tbody></table>
+
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#submit").click(function(){
+            var userId = $("#user-id").val();
+            forbidden = $("#forbidden").val();
+            url = $("#input-form").attr('action');
+            data = {};
+            data['userId'] = userId;
+            data['forbidden'] = forbidden;
+            $.post(url, data, function(e) {
+                if(e.status==0){
+                    window.location.reload();//刷新当前页面
+                }else{
+                    alert('操作失败');
+                }
+            },'json');
+            return false;
+        });
+    });
+</script>
+</body></html>

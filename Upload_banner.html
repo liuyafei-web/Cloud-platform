@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html><head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <style type="text/css">
+        body {
+            font-family: '微软雅黑', sans-serif;
+            font-size: 13px;
+            padding-bottom: 40px;
+            background-color: #e9e7ef;
+        }
+
+        .sidebar-nav {
+            padding: 9px 0;
+        }
+
+        @media ( max-width : 980px) {
+            /* Enable use of floated navbar text */
+            .navbar-text.pull-right {
+                float: none;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+        }
+        button[collegeId]{
+            font-family: '微软雅黑', sans-serif;
+            background-color: #93C6EA;
+            border: none;
+            margin: 0 2px;
+            line-height: 30px;
+        }
+        button[collegeId]:hover{
+            background-color: #3B97D8;
+            border: none;
+            margin: 0 2px;
+            line-height: 30px;
+        }
+        .nav {
+            margin:20px;
+            font-size: 18px;
+        }
+        .content {
+            width:100%;
+            margin:0 auto;
+            font-size:16px;
+        }
+        .content table tr th{
+            width:15px;
+        }
+        .nav button{
+            margin:0px 20px;
+        }
+        .btn a {
+            text-decoration:none;
+            color:#fff;
+        }
+        .score {
+            margin-left:60px;
+        }
+        .btn {
+            margin-left:20px;
+        }
+        form {
+            margin-left:600px;
+        }
+    </style>
+</head>
+<body marginwidth="0" marginheight="0">
+<div class="nav">
+    <span>上传管理</span> &gt; <span>banner上传</span><br><br>
+    <a class="btn btn-warning pull-right client" href="Upload_addBanner.html?type=1">增加</a>
+    <a class="btn btn-warning pull-right enterprise hidden" href="Upload_addBanner.html?type=2">增加</a>
+    <button class="btn btn-primary btn-client">客户端</button>
+    <button class="btn btn-enterprise">企业端</button>
+</div><hr>
+<div class="client">
+    <table class="table table-hover table-bordered">
+        <thead>
+        <tr>
+            <th>图片</th>
+            <th>标题</th>
+            <th>添加时间</th>
+            <th colspan="2">操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><img src="http://ogbcmnvf7.bkt.clouddn.com/f6606b255f58249b9300f2f6c785c79a.png" alt="图片" height="100" width="100"></td>
+            <td>华普大家</td>
+            <td>2017-06-28 14:02:38</td>
+            <td><a href="/index.php/Admin/Upload/editBanner.html?id=45&amp;type=1">修改</a></td>
+            <td><a href="javascript:;" onclick="disp_confirm(45)">删除</a></td>
+        </tr><tr>
+            <td><img src="http://ogbcmnvf7.bkt.clouddn.com/e6be126888ca8d239e9b4af05413911b.jpeg" alt="图片" height="100" width="100"></td>
+            <td>华普大家庭</td>
+            <td>2017-06-28 13:56:01</td>
+            <td><a href="/index.php/Admin/Upload/editBanner.html?id=40&amp;type=1">修改</a></td>
+            <td><a href="javascript:;" onclick="disp_confirm(40)">删除</a></td>
+        </tr><tr>
+            <td><img src="http://ogbcmnvf7.bkt.clouddn.com/baed3751f7898494ae21c82eb4bf851f.png" alt="图片" height="100" width="100"></td>
+            <td>华普亿方前程似锦</td>
+            <td>2017-06-28 13:48:08</td>
+            <td><a href="/index.php/Admin/Upload/editBanner.html?id=39&amp;type=1">修改</a></td>
+            <td><a href="javascript:;" onclick="disp_confirm(39)">删除</a></td>
+        </tr>            </tbody>
+    </table>
+</div>
+
+<div class="enterprise hidden">
+    <table class="table table-hover table-bordered">
+        <thead>
+        <tr>
+            <th>图片</th>
+            <th>标题</th>
+            <th>添加时间</th>
+            <th colspan="2">操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><img src="http://ogbcmnvf7.bkt.clouddn.com/0dace2d23eed31196a7da2c385f8ce85.jpeg" alt="图片" height="100" width="100"></td>
+            <td>百度1</td>
+            <td>2017-06-30 16:41:45</td>
+            <td><a href="/index.php/Admin/Upload/editBanner.html?id=46&amp;type=1">修改</a></td>
+            <td><a href="javascript:;" onclick="disp_confirm(46)">删除</a></td>
+        </tr><tr>
+            <td><img src="http://ogbcmnvf7.bkt.clouddn.com/51e99133abcc806e1416fa66faa75aaf.jpeg" alt="图片" height="100" width="100"></td>
+            <td>华普运营部1</td>
+            <td>2017-06-28 14:02:09</td>
+            <td><a href="/index.php/Admin/Upload/editBanner.html?id=44&amp;type=1">修改</a></td>
+            <td><a href="javascript:;" onclick="disp_confirm(44)">删除</a></td>
+        </tr><tr>
+            <td><img src="http://ogbcmnvf7.bkt.clouddn.com/935b7300cf32e375902c953eb5cf9814.jpeg" alt="图片" height="100" width="100"></td>
+            <td>华普财务部</td>
+            <td>2017-06-28 14:00:54</td>
+            <td><a href="/index.php/Admin/Upload/editBanner.html?id=43&amp;type=1">修改</a></td>
+            <td><a href="javascript:;" onclick="disp_confirm(43)">删除</a></td>
+        </tr><tr>
+            <td><img src="http://ogbcmnvf7.bkt.clouddn.com/f87fcb70bae9977d49b47e4dc20cbdd5.jpeg" alt="图片" height="100" width="100"></td>
+            <td>华普销售部</td>
+            <td>2017-06-28 13:59:44</td>
+            <td><a href="/index.php/Admin/Upload/editBanner.html?id=42&amp;type=1">修改</a></td>
+            <td><a href="javascript:;" onclick="disp_confirm(42)">删除</a></td>
+        </tr>            </tbody>
+    </table>
+</div>
+
+<script>
+    $(function(){
+        var type = '1';
+        if(type==1){
+            $(".btn-enterprise").removeClass('btn-primary');
+            $(".btn-client").addClass('btn-primary');
+            $(".client").show();
+            $(".enterprise").addClass("hidden");
+        }else{
+            $(".btn-client").removeClass('btn-primary');
+            $(".btn-enterprise").addClass('btn-primary');
+            $(".enterprise").removeClass("hidden");
+            $(".client").hide();
+        }
+        $(".btn-client").click(function(){
+//            location.href="Upload_banner.html?type=1";
+                $(this).addClass("btn-primary").siblings().removeClass("btn-primary"); //切换选中的按钮高亮状态
+              $(".client").show();
+              $(".enterprise").addClass("hidden");
+        });
+        $(".btn-enterprise").click(function(){
+//            location.href="Upload_banner.html?type=2";
+              $(this).addClass("btn-primary").siblings().removeClass("btn-primary"); //切换选中的按钮高亮状态
+              $(".enterprise").removeClass("hidden");
+              $(".client").hide();
+        });
+    });
+</script>
+<script type="text/javascript">
+    function disp_confirm(id){
+        var r=confirm("确定要删除吗？")
+        if(r==true){
+            location.href="http://app.hopefound.cn:8080/Admin/Upload/deleteBanner?id="+id+'&type=1';
+        }
+    }
+</script>
+
+</body></html>

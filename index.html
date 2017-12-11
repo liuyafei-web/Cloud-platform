@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>赢之道后台</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link href="css/adminStyle.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function() {
+
+    $(".div2").click(
+
+      function() {
+
+        $(this).next("div").slideToggle("slow").siblings(".div3:visible").slideUp("slow");
+
+      });
+
+  });
+
+  function openurl(url) {
+
+    var rframe = parent.document.getElementById("rightFrame");
+
+    rframe.src = url;
+
+  }
+  </script>
+  <style>
+  body {
+    margin: 0;
+    font-family: "Microsoft Yahei";
+    /*background-image: url(images/background.jpg);*/
+    /*background-repeat: no-repea;*/
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: #fff;
+  }
+  
+  .top1 {
+    position: fixed;
+    z-index: 5555;
+    top: 0px;
+    width: 100%;
+    height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 17px;
+    font-height: 20px;
+    background-color: #333;
+  }
+  
+  .title {
+    float: left;
+    color: #FFFFFF;
+  }
+  
+  .title a {
+    color: #fff;
+    font-size: 28px;
+  }
+  
+  .top2 {
+    position: fixed;
+    z-index: 5555;
+    top: 20px;
+    width: 100%;
+    height: 77px;
+    text-align: center;
+    color: #fff;
+    background-color: #f13840;
+  }
+  
+  .left {
+    position: absolute;
+    left: 0px;
+    top: 97px;
+    width: 10%;
+    height: 100%;
+    border-right: 1px solid #9370DB;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    background-color: #1a1a1a;
+  }
+  
+  .right {
+    position: absolute;
+    left: 10%;
+    top: 97px;
+    width: 90%;
+    height: 100%;
+    border-top: 0px solid #484860;
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  .end {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    color: #556B2F;
+    font-size: 17px;
+    font-height: 20px;
+    background-color: #C0C0C0
+  }
+  
+  .div1 {
+    text-align: center;
+    width: 100%;
+    padding-top: 10px;
+    color: #fff;
+  }
+  
+  .div2 {
+    padding-left: 0px;
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    font-size: 14px;
+    position: relative;
+    text-align: center;
+    color: #fff;
+  }
+  
+  .spgl {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    left: 40px;
+    top: 10px;
+  }
+  
+  .yhgl {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    left: 40px;
+    top: 10px;
+    background: url(images/4.png);
+  }
+  
+  .gggl {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    left: 40px;
+    top: 10px;
+    background: url(images/4.png);
+  }
+  
+  .zlgl {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    left: 40px;
+    top: 10px;
+    background: url(images/4.png);
+  }
+  
+  .pjgl {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    left: 40px;
+    top: 10px;
+    background: url(images/4.png);
+  }
+  
+  .tcht {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    left: 40px;
+    top: 10px;
+  }
+  
+  .div3 {
+    display: none;
+    cursor: pointer;
+    font-size: 15px;
+    background-color: #2c2c2c;
+  }
+  
+  .div3 ul {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .div3 li {
+    padding-left: 0px;
+    height: 30px;
+    line-height: 30px;
+    list-style: none;
+    text-align: center;
+  }
+  
+  .div3 li>a {
+    color: #fff;
+    font-size: 12px;
+  }
+  
+  .a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 15px;
+  }
+  
+  .a1 {
+    text-decoration: none;
+    color: #000000;
+    font-size: 18px;
+  }
+  
+  h3 a {
+    color: gray;
+    font-size: 35px;
+  }
+  
+  .div3 li.selected {
+    background-color: #f13840;
+  }
+
+  .pull-right {
+    float:right;
+  }
+  </style>
+</head>
+
+<body>
+  <div class="top1">
+    <marquee scrollAmount=2 width=300>数据无价，请谨慎操作！</marquee>
+  </div>
+  <div class="top2">
+    <div class="logo">
+      <img src="images/admin_logo.png" title="赢之道" />
+    </div>
+    <div class="title">
+      <h3><a href="index.html">赢之道后台管理系统</a></h3>
+    </div>
+    <div class="fr top-link">
+      <button onclick="fresh()" style="width:50px;height:30px">刷新</button>
+      <a href="changePass.html" class="pull-right" target="rightFrame"><span>修改密码</span></a>
+      <a href="" target="mainCont" title="huronghuan"><i class="adminIcon"></i><span>操作员：huronghuan</span></a>
+
+    </div>
+  </div>
+  <div class="left">
+    <div class="div1">
+      <div class="left_top">
+      </div>
+      <div class="div2">
+            <div class="spgl"></div>
+            用户账户管理
+      </div>
+          <div class="div3">
+            <li>
+                  <a class="a" href="javascript:void(0);" onClick="openurl('Account_collegeList.html');">创业大学</a>
+                </li><li>
+                  <a class="a" href="javascript:void(0);" onClick="openurl('Account_matchList.html');">创业大赛</a>
+                </li><li>
+                  <a class="a" href="javascript:void(0);" onClick="openurl('Account_universityList.html');">高校账户</a>
+                </li><li>
+                  <a class="a" href="javascript:void(0);" onClick="openurl('Account_collegeUser.html');">创大用户</a>
+                </li><li>
+                  <a class="a" href="javascript:void(0);" onClick="openurl('Account_commonUser.html');">普通用户</a>
+                </li>
+          </div>
+      <div class="div2">
+            <div class="spgl"></div>
+            项目管理
+      </div>
+          <div class="div3">
+            <li>
+                  <a class="a" href="javascript:void(0);" onClick="openurl('Projects_project.html');">总库项目</a>
+                </li><li>
+                  <a class="a" href="javascript:void(0);" onClick="openurl('Projects_matchProject.html');">大赛项目</a>
+                </li><li>
+                  <a class="a" href="javascript:void(0);" onClick="openurl('Projects_collegeProject.html');">创大项目</a>
+                </li>
+          </div>
+      <div class="div2">
+            <div class="spgl"></div>
+            审核管理
+      </div>
+          <div class="div3">
+            <li>
+                  <a class="a" href="javascript:void(0);" onClick="openurl('Check_accountApply.html');">帐号申请</a>
+                </li><li>
+                  <a class="a" href="javascript:void(0);" onClick="openurl('Check_feedbackCheck.html');">意见审核</a>
+                </li>
+          </div>
+      <div class="div2">
+            <div class="spgl"></div>
+            上传管理
+      </div>
+          <div class="div3">
+            <li>
+                  <a class="a" href="javascript:void(0);" onClick="openurl('Upload_h5Courseware.html');">H5课件上传</a>
+                </li><li>
+                  <a class="a" href="javascript:void(0);" onClick="openurl('Upload_videoCourseware.html');">视频课件上传</a>
+                </li><li>
+                  <a class="a" href="javascript:void(0);" onClick="openurl('Upload_advertisement.html');">引导页上传</a>
+                </li><li>
+                  <a class="a" href="javascript:void(0);" onClick="openurl('Upload_totalTest.html');">测评题目上传</a>
+                </li><li>
+                  <a class="a" href="javascript:void(0);" onClick="openurl('Upload_banner.html');">banner上传</a>
+                </li>
+          </div>
+      <div class="div2">
+            <div class="spgl"></div>
+            发布管理
+      </div>
+          <div class="div3">
+            <li>
+                  <a class="a" href="javascript:void(0);" onClick="openurl('Release_officialMsg.html');">官方消息发布</a>
+                </li><li>
+                  <a class="a" href="javascript:void(0);" onClick="openurl('Release_yzdMsg.html');">赢之道资讯</a>
+                </li><li>
+                  <a class="a" href="javascript:void(0);" onClick="openurl('Release_enterpriseMsg.html');">大学生创业经</a>
+                </li><li>
+                  <a class="a" href="javascript:void(0);" onClick="openurl('Release_lovePsychology.html');">恋爱心理学</a>
+                </li>
+          </div>
+      <div class="div2">
+            <div class="spgl"></div>
+            排行管理
+      </div>
+          <div class="div3">
+            <li>
+                  <a class="a" href="javascript:void(0);" onClick="openurl('Rank_teacherRank.html');">讲师评价分数排行</a>
+                </li><li>
+                  <a class="a" href="javascript:void(0);" onClick="openurl('Rank_heroRank.html');">创业英雄榜排行</a>
+                </li><li>
+                  <a class="a" href="javascript:void(0);" onClick="openurl('Rank_funnyRank.html');">花草逗逼排行榜</a>
+                </li>
+          </div>
+      <div class="div2">
+            <div class="spgl"></div>
+            第三方管理
+      </div>
+          <div class="div3">
+            <li>
+              <a class="a" href="javascript:void(0);" onClick="openurl('Third_thirdList.html');">第三方列表</a>
+            </li>
+          </div>
+      <a class="a1" onclick="if (confirm('确定要退出吗？')) return true; else return false;" href="login.html">
+        <div class="div2">
+          <div class="tcht"></div>
+          退出后台
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="right">
+    <iframe id="rightFrame" name="rightFrame" src="welcome.html" width="100%" height="100%" scrolling="auto" marginheight="0" marginwidth="0" align="center" style="border: 0px solid #CCC; margin: 0; padding: 0;overflow-x:none"></iframe>
+    
+  </div>
+  <script>
+  $(document).ready(function() {
+
+    $("li").click(function() {
+
+      $(this).addClass("selected").siblings().removeClass("selected");
+
+    });
+
+  });
+  function fresh () {
+    window.frames["rightFrame"].location.reload();
+  }
+  
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html><head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- <script type="text/javascript" src="/Public/Admin/nicEdit/nicEdit.js"></script>
+    <script type="text/javascript">
+        bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
+    </script> -->
+    <style type="text/css">
+        body {
+            font-family: '微软雅黑', sans-serif;
+            font-size: 13px;
+            padding-bottom: 40px;
+            background-color: #e9e7ef;
+        }
+
+        .sidebar-nav {
+            padding: 9px 0;
+        }
+
+        @media ( max-width : 980px) {
+            /* Enable use of floated navbar text */
+            .navbar-text.pull-right {
+                float: none;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+        }
+        button[collegeId]{
+            font-family: '微软雅黑', sans-serif;
+            background-color: #93C6EA;
+            border: none;
+            margin: 0 2px;
+            line-height: 30px;
+        }
+        button[collegeId]:hover{
+            background-color: #3B97D8;
+            border: none;
+            margin: 0 2px;
+            line-height: 30px;
+        }
+        .nav {
+            margin:20px;
+            font-size: 18px;
+        }
+        .content {
+            width:100%;
+            margin:0 auto;
+            font-size:16px;
+        }
+        .content table tr th{
+            width:15px;
+        }
+        .nav button{
+            margin:0px 20px;
+        }
+        .btn a {
+            text-decoration:none;
+            color:#fff;
+        }
+        .score {
+            margin-left:60px;
+        }
+        .btn {
+            margin-left:20px;
+        }
+        form {
+            margin-left:60px;
+        }
+    </style>
+    <script src="http://app.hopefound.cn:8080/vendor/ueditor/lang/zh-cn/zh-cn.js" type="text/javascript" defer="defer"></script><link href="http://app.hopefound.cn:8080/vendor/ueditor/themes/default/css/ueditor.css" type="text/css" rel="stylesheet"><script src="http://app.hopefound.cn:8080/vendor/ueditor/third-party/codemirror/codemirror.js" type="text/javascript" defer="defer"></script><link rel="stylesheet" type="text/css" href="http://app.hopefound.cn:8080/vendor/ueditor/third-party/codemirror/codemirror.css"><script src="http://app.hopefound.cn:8080/vendor/ueditor/third-party/zeroclipboard/ZeroClipboard.js" type="text/javascript" defer="defer"></script></head>
+<body marginwidth="0" marginheight="0" style="">
+<div class="nav">
+    <span>当前位置：</span><span>发布管理</span>&gt;&gt;<span>大学生创业经发布</span>
+    <a class="btn btn-primary pull-right" href="/index.php/Admin/Release/enterpriseMsg.html">返回</a><br><br>
+</div><hr>
+<form action="/index.php/Admin/Release/addEnterpriseMsg.html" method="post" enctype="multipart/form-data" style="">
+    标题<br>
+    <input type="text" name="title" required="required"><br><br>
+    图片<br>
+    <input type="file" name="image" required="required">格式：gif,jpeg,jpg,png 大小2M以内<br><br>
+    简介<br>
+    <input type="text" name="brief" style="width:600px" required="required">Tips:推送时显示在通知栏<br><br>
+    正文<br>
+    <!-- <textarea name="content" style="width: 600px; height: 200px;"></textarea><br><br> -->
+    <!-- 加载编辑器的容器 -->
+    <div id="container" class="edui-default" style="">
+        <div id="edui1" class="edui-editor  edui-default" style="width: 800px; z-index: 999;">
+            <div id="edui1_iframeholder" class="edui-editor-iframeholder edui-default" style="width: 800px; height: 320px; z-index: 999; overflow: hidden;"></div>
+            <div id="edui1_scalelayer" class="edui-default"></div>
+        </div>
+    </div><br>
+    <button type="submit" class="btn btn-primary" id="submit">发送</button>
+    <a href="javascript:;" class="btn btn-primary" style="margin-left:50px" onclick="addInput()">发送并推送</a>
+    <textarea name="content" id="ueditor_textarea_content" style="display: none;"></textarea></form>
+<!-- 配置文件 -->
+<script type="text/javascript" src="/vendor/ueditor/ueditor.config.js"></script>
+<!-- 编辑器源码文件 -->
+<script type="text/javascript" src="/vendor/ueditor/ueditor.all.js"></script>
+<!-- 实例化编辑器 -->
+<script type="text/javascript">
+    var editor = UE.getEditor('container', {
+        toolbars: [
+            [
+                'anchor', //锚点
+                'undo', //撤销
+                'redo', //重做
+                'bold', //加粗
+                'indent', //首行缩进
+                'italic', //斜体
+                'underline', //下划线
+                'strikethrough', //删除线
+                'subscript', //下标
+                'fontborder', //字符边框
+                'superscript', //上标
+                'formatmatch', //格式刷
+                'source', //源代码
+                'blockquote', //引用
+                'pasteplain', //纯文本粘贴模式
+                'selectall', //全选
+                'print', //打印
+                'preview', //预览
+                'horizontal', //分隔线
+                'removeformat', //清除格式
+                'time', //时间
+                'date', //日期
+                'unlink', //取消链接
+                'cleardoc', //清空文档
+                'fontfamily', //字体
+                'fontsize', //字号
+                'paragraph', //段落格式
+                'simpleupload', //单图上传
+                'insertimage', //多图上传
+                'link', //超链接
+                'emotion', //表情
+                'spechars', //特殊字符
+                'searchreplace', //查询替换
+                'help', //帮助
+                'justifyleft', //居左对齐
+                'justifyright', //居右对齐
+                'justifycenter', //居中对齐
+                'justifyjustify', //两端对齐
+                'forecolor', //字体颜色
+                'backcolor', //背景色
+                'insertorderedlist', //有序列表
+                'insertunorderedlist', //无序列表
+                'fullscreen', //全屏
+                'directionalityltr', //从左向右输入
+                'directionalityrtl', //从右向左输入
+                'rowspacingtop', //段前距
+                'rowspacingbottom', //段后距
+                'imagenone', //默认
+                'imageleft', //左浮动
+                'imageright', //右浮动
+                'imagecenter', //居中
+                'lineheight', //行间距
+                'edittip ', //编辑提示
+                'customstyle', //自定义标题
+                'autotypeset', //自动排版
+                'touppercase', //字母大写
+                'tolowercase', //字母小写
+            ]
+        ],
+        initialFrameWidth: 800,
+        initialFrameHeight: 320
+    });
+</script>
+<script type="text/javascript">
+    function addInput(){
+        $("form").append("<input class='hidden' type='text' name='push' value='1'>");
+        $("#submit").click();
+    }
+</script>
+
+<div id="edui_fixedlayer" class="edui-default" style="position: fixed; left: 0px; top: 0px; width: 0px; height: 0px;"><div id="edui161" class="edui-popup  edui-bubble edui-default" onmousedown="return false;" style="display: none;"> <div id="edui161_body" class="edui-popup-body edui-default"> <iframe style="position:absolute;z-index:-1;left:0;top:0;background-color: transparent;" frameborder="0" width="100%" height="100%" src="about:blank" class="edui-default"></iframe> <div class="edui-shadow edui-default"></div> <div id="edui161_content" class="edui-popup-content edui-default">  </div> </div></div></div></body></html>

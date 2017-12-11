@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html><head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <style type="text/css">
+        body {
+            font-family: '微软雅黑', sans-serif;
+            font-size: 13px;
+            padding-bottom: 40px;
+            background-color: #e9e7ef;
+        }
+
+        .sidebar-nav {
+            padding: 9px 0;
+        }
+
+        @media ( max-width : 980px) {
+            /* Enable use of floated navbar text */
+            .navbar-text.pull-right {
+                float: none;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+        }
+        button[collegeId]{
+            font-family: '微软雅黑', sans-serif;
+            background-color: #93C6EA;
+            border: none;
+            margin: 0 2px;
+            line-height: 30px;
+        }
+        button[collegeId]:hover{
+            background-color: #3B97D8;
+            border: none;
+            margin: 0 2px;
+            line-height: 30px;
+        }
+        .nav {
+            margin:20px;
+            font-size: 18px;
+        }
+        .content {
+            text-align: center;
+            width:100%;
+            margin:0 auto;
+            font-size:16px;
+        }
+        .content table tr th{
+            width:15px;
+        }
+        .nav button{
+            margin:0px 20px;
+        }
+        .btn a {
+            text-decoration:none;
+            color:#fff;
+        }
+        .score {
+            margin-left:60px;
+        }
+        .btn {
+            margin-left:20px;
+        }
+        .chooseFile{
+            margin-left:100px;
+        }
+    </style>
+</head>
+<body marginwidth="0" marginheight="0">
+<div class="nav">
+    <a class="btn btn-warning pull-right" href="Upload_banner.html?type=2">返回</a>
+    <span>上传管理</span> &gt; <span>banner添加</span><br><br>
+</div><hr>
+<div class="content">
+    <form enctype="multipart/form-data" action="Upload_addBanner.html?type=2" method="post">
+        <input type="hidden" name="type" value="2">
+        图片<br>
+        <img src="" alt="" height="200" width="200"><br>
+        <input class="chooseFile" type="file" name="img" required="required" onchange="previewFile()"><br><br>
+        标题<br>
+        <input type="text" name="title" style="width:300px" required="required"><br><br>
+        链接<br>
+        <input type="url" name="link" style="width:300px" required="required"><br>
+        以http/https开头<br><br>
+
+        <button type="submit" class="btn btn-primary">保存</button>
+    </form>
+</div>
+<script language="javascript">
+    function previewFile() {
+        var preview = document.querySelector('img');
+        var file  = document.querySelector('input[type=file]').files[0];
+        var reader = new FileReader();
+        reader.onloadend = function () {
+            preview.src = reader.result;
+        }
+        if (file) {
+            reader.readAsDataURL(file);
+        } else {
+            preview.src = "";
+        }
+    }
+</script>
+
+</body></html>

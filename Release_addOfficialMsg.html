@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html><head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <style type="text/css">
+        body {
+            font-family: '微软雅黑', sans-serif;
+            font-size: 13px;
+            padding-bottom: 40px;
+            background-color: #e9e7ef;
+        }
+
+        .sidebar-nav {
+            padding: 9px 0;
+        }
+
+        @media ( max-width : 980px) {
+            /* Enable use of floated navbar text */
+            .navbar-text.pull-right {
+                float: none;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+        }
+        button[collegeId]{
+            font-family: '微软雅黑', sans-serif;
+            background-color: #93C6EA;
+            border: none;
+            margin: 0 2px;
+            line-height: 30px;
+        }
+        button[collegeId]:hover{
+            background-color: #3B97D8;
+            border: none;
+            margin: 0 2px;
+            line-height: 30px;
+        }
+        .nav {
+            margin:20px;
+            font-size: 18px;
+        }
+        .content {
+            width:100%;
+            margin:0 auto;
+            font-size:16px;
+        }
+        .content table tr th{
+            width:15px;
+        }
+        .nav button{
+            margin:0px 20px;
+        }
+        .btn a {
+            text-decoration:none;
+            color:#fff;
+        }
+        .score {
+            margin-left:60px;
+        }
+        .btn {
+            margin-left:20px;
+        }
+        form {
+            margin-left:60px;
+        }
+    </style>
+</head>
+<body marginwidth="0" marginheight="0">
+<div class="nav">
+    <span>发布管理</span> &gt; <span>官方消息发布</span>
+    <a class="btn btn-primary pull-right" href="Release_officialMsg.html">返回</a><br><br>
+</div><hr>
+<form action="Release_addOfficialMsg.html" method="post">
+    标题<br>
+    <input type="text" name="title" required="required"><br><br>
+    简介<br>
+    <input type="text" name="brief" style="width:600px" required="required">Tips:推送时显示在通知栏<br><br>
+    正文<br>
+    <textarea name="content" style="width:600px;height:400px;" required="required"></textarea><br><br>
+    <button type="submit" class="btn btn-primary" id="submit">发送</button>
+    <a href="javascript:;" class="btn btn-primary" style="margin-left:50px" onclick="addInput()">发送并推送</a>
+</form>
+<script type="text/javascript">
+    function addInput(){
+        $("form").append("<input class='hidden' type='text' name='push' value='1'>");
+        $("#submit").click();
+    }
+</script>
+
+</body></html>

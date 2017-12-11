@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html><head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+
+    <style type="text/css">
+        body {
+            font-family: '微软雅黑', sans-serif;
+            font-size: 13px;
+            padding-bottom: 40px;
+            background-color: #e9e7ef;
+        }
+        @media ( max-width : 980px) {
+            /* Enable use of floated navbar text */
+            .navbar-text.pull-right {
+                float: none;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+        }
+        button[collegeId]{
+            font-family: '微软雅黑', sans-serif;
+            background-color: #93C6EA;
+            border: none;
+            margin: 0 2px;
+            line-height: 30px;
+        }
+        button[collegeId]:hover{
+            background-color: #3B97D8;
+            border: none;
+            margin: 0 2px;
+            line-height: 30px;
+        }
+        .nav {
+            margin:20px;
+            font-size: 18px;
+        }
+        .content {
+            width:100%;
+            margin:0 auto;
+            font-size:16px;
+        }
+        .content table tr th{
+            width:15px;
+        }
+        .nav button{
+            margin:0px 20px;
+        }
+        .btn a {
+            text-decoration:none;
+            color:#fff;
+        }
+        .score {
+            margin-left:60px;
+        }
+        .table td {
+            text-align: center;
+            height:38px;
+            line-height: 38px;
+        }
+        .table th {
+            width:33%;
+        }
+        .btn {
+            margin-left:20px;
+        }
+    </style>
+</head>
+<body marginwidth="0" marginheight="0">
+<div class="nav">
+    <span>发布管理</span> &gt; <span>官方消息发布</span>
+    <a class="btn btn-primary pull-right" href="Release_addOfficialMsg.html">发布新消息</a><br><br>
+</div><hr>
+<div class="">
+    <table class="table table-hover table-bordered">
+        <thead>
+        <tr>
+            <th>时间</th>
+            <th>消息</th>
+            <th colspan="3">操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>2017.04.28</td>
+            <td>五一假期通知</td>
+            <td><a href="javascript:;" onclick="disp_confirm(104)">删除</a></td>
+            <td><a href="Release_editMsg.html?id=104">编辑</a></td>
+            <td><a href="/index.php/Admin/Release/topMsg.html?id=104&amp;type=1">置顶</a></td>
+        </tr><tr>
+            <td>2017.06.30</td>
+            <td>新消息1</td>
+            <td><a href="javascript:;" onclick="disp_confirm(286)">删除</a></td>
+            <td><a href="Release_editMsg.html?id=286">编辑</a></td>
+            <td><a href="/index.php/Admin/Release/topMsg.html?id=286&amp;type=1">置顶</a></td>
+        </tr><tr>
+            <td>2017.04.28</td>
+            <td>全国大学生创业活动通知</td>
+            <td><a href="javascript:;" onclick="disp_confirm(105)">删除</a></td>
+            <td><a href="Release_editMsg.html?id=105">编辑</a></td>
+            <td><a href="/index.php/Admin/Release/topMsg.html?id=105&amp;type=1">置顶</a></td>
+        </tr>            </tbody>
+        <tbody><tr><td style="font-size: 15px" colspan="9"><div>共1页     </div></td></tr>
+        </tbody></table>
+</div>
+
+<script type="text/javascript">
+    function disp_confirm(id){
+        var r=confirm("确定要删除吗？")
+        if(r==true){
+            location.href="http://app.hopefound.cn:8080/Admin/Release/deleteMsg?id="+id;
+        }
+    }
+</script>
+</body></html>
